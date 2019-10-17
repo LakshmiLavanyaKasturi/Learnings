@@ -1,5 +1,25 @@
 Machine Learning Concepts:
 
+
+Types of Machine Learning:
+1. Supervised. 
+  a. Regression
+    Eg: Cancer to Smoking Comparision. 
+  b. Classification
+   
+2. Unsupervised. 
+  a. Clustering
+  b. Association.
+
+Machine Learining Life Cycle:
+
+Raw Data - > pre Process Models  - > ML Algorithms -> Candidate Model -> Deploy model -> Application 
+
+Azure MI plays a major role in handling the steps from Pre process - Deployment. 
+
+
+
+
 Convolutions:Getting pixels of the images, filter the values of the neighbors and multiply them to get the new pixel value. This is required to have multiple filtering applied on the images to get particular details of the images.
 Eg: An image having eyes highlighted of a particular person. 
 
@@ -9,3 +29,5 @@ Solution: Pooling.
 Pooling: Shrinking the size of the image while enhancing some feature details. 
 
 This is done by taking parts of the pixels and getting the highest value it and make a pixel taking away 75% of the pixels. 
+Eg: Take a pixel with 16 units and 2*2 pooling is done by taking the highest value in each 2*2 columns and eliminating the rest of the pixels. Hence, 75% of the memory is saved. 
+
