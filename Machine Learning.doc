@@ -1,0 +1,11 @@
+Machine Learning Concepts:
+
+Convolutions:Getting pixels of the images, filter the values of the neighbors and multiply them to get the new pixel value. This is required to have multiple filtering applied on the images to get particular details of the images.
+Eg: An image having eyes highlighted of a particular person. 
+
+Disadvantages: More details of the pixels, more storage and data. 
+Solution: Pooling. 
+
+Pooling: Shrinking the size of the image while enhancing some feature details. 
+
+This is done by taking parts of the pixels and getting the highest value it and make a pixel taking away 75% of the pixels. 
