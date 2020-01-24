@@ -1,0 +1,17 @@
+Dev Ops is integration of Dev team and operations team to deliver the project efficiently to Client. 
+
+Advantages:
+Human Errors reduction
+Quick bug fixing ( automated )
+Stable work environment. 
+
+Block Chain Technology:  A secure way of managing and recording transactions, agreements and contracts
+
+It has 3 pain parts of a block. 
+1. Data (Eg: To, from and amount in a transaction). 
+2. Hash (finger print)
+3. Hash of previous block.
+
+Advantages:
+Increase transparency
+Reduce infrastructure costs. 
