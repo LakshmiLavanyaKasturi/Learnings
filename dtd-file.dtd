@@ -1,0 +1,26 @@
+!-- DTD file generated using oXygen  --!
+
+<!ELEMENT resume (#PCDATA | school | skill | work_history | contact_info)*>
+<!ELEMENT Address (#PCDATA | House_number | Street | City | State | Zipcode)*>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT House_number (#PCDATA)>
+<!ELEMENT degree (#PCDATA)>
+<!ELEMENT Software_methodologies (#PCDATA)>
+<!ELEMENT contact_info (#PCDATA | name | phone_number | Address)*>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT experience (#PCDATA | company_name | title | duration)*>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT tools (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT school (#PCDATA | name | degree | year)*>
+<!ELEMENT State (#PCDATA)>
+<!ELEMENT skill (#PCDATA | programming_languages | webtechnologies | database_languages | Software_methodologies | tools)*>
+<!ELEMENT company_name (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT Zipcode (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT phone_number (#PCDATA)>
+<!ELEMENT database_languages (#PCDATA)>
+<!ELEMENT work_history (#PCDATA | experience)*>
+<!ELEMENT programming_languages (#PCDATA)>
+<!ELEMENT webtechnologies (#PCDATA)>
