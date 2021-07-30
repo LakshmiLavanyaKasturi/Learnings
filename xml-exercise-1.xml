@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resume SYSTEM "file:/C:/Users/lavan/Documents/Personal/Exercise_1/lavanyak-resume-DTD.dtd">
+
+<resume>
+    <!-- education section -->
+    <school>
+        <name>Jawaharal Nehru Technological University</name>
+        <degree>Computer Science Engineering</degree>
+        <year>2011</year>
+    </school>
+
+    <!-- Technical skills section -->
+    <skill>
+        <programming_languages>Markdown, Java, C#, C++</programming_languages>
+        <webtechnologies>HTML, CSS, Javascript, JSON, XML</webtechnologies>
+        <database_languages>MySQL, SQLServer</database_languages>
+        <Software_methodologies>Agile, Scrum, Waterfall</Software_methodologies>
+        <tools>Jira, Azure DevOps</tools>
+    </skill>
+
+    <!-- History -->
+    <work_history>
+           
+        <experience>
+            <company_name>AT&amp;T</company_name>
+            <title>Software Engineer</title>
+            <duration>Jun 2011 to Dec 2013</duration>
+        </experience>
+        <experience>
+            <company_name>Ensocare</company_name>
+            <title>Program Manager</title>
+            <duration>Jan 2014 to Dec 2017</duration>
+        </experience>
+            
+    </work_history>
+
+    <!-- Contact Information -->
+    <contact_info>
+        <name>Lavanya Kasturi</name>
+
+        <phone_number>425-555-2521</phone_number>
+        <Address>
+            <House_number>1221</House_number>
+            <Street>211th Ave SE</Street>
+            <City>Seattle</City>
+            <State>Washington</State>
+            <Zipcode>98101</Zipcode>
+        </Address>
+    </contact_info>
+</resume>
