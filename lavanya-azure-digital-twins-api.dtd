@@ -1,0 +1,20 @@
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT in (#PCDATA)>
+<!ELEMENT request-body (#PCDATA | attributes)*>
+<!ELEMENT authorization_url (#PCDATA)>
+<!ELEMENT res-attributes (#PCDATA | name | Type | Description)*>
+<!ELEMENT azure-auth-security (#PCDATA | name | Description)*>
+<!ELEMENT Photo (#PCDATA)>
+<!ELEMENT bold (#PCDATA)>
+<!ELEMENT type (#PCDATA | bold)*>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT security (#PCDATA | security-attributes | azure-auth-security)*>
+<!ELEMENT security-attributes (#PCDATA | type | flow | authorization_url)*>
+<!ELEMENT apiexample (#PCDATA | Photo | uri-parameters | request-body | responses | security)*>
+<!ELEMENT Required (#PCDATA)>
+<!ELEMENT uri-parameters (#PCDATA | parameter)*>
+<!ELEMENT parameter (#PCDATA | name | in | Required | Type | Description)*>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT responses (#PCDATA | res-attributes)*>
+<!ELEMENT attributes (#PCDATA | name | Required | Type | Description)*>
+<!ELEMENT flow (#PCDATA)>

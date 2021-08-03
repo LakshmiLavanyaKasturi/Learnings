@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE apiexample SYSTEM "file:/C:/Users/lavan/Documents/Personal/Digital_twins_example/uri-parameters.dtd">
+
+
+<apiexample>
+    <Photo>
+        azure-digital-twins-explorer.png
+    </Photo>
+    
+    <uri-parameters>
+        <parameter>
+            <name>resourceGroupName</name>
+            <in>path</in>
+            <Required>true</Required>
+            <Type>string</Type>
+            <Description>The name of the resource group that contains the
+                DigitalTwinsInstance.</Description>
+        </parameter>
+        
+        <parameter>
+            <name>resourceName</name>
+            <in>path</in>
+            <Required>true</Required>
+            <Type>string</Type>
+            <Description>The name of the DigitalTwinsInstance.Regex pattern</Description>
+        </parameter>
+        
+        <parameter>
+            <name>subscriptionId</name>
+            <in>path</in>
+            <Required>true</Required>
+            <Type>string</Type>
+            <Description>The subscription identifier.</Description>
+        </parameter>
+        
+        <parameter>
+            <name>api-version</name>
+            <in>query</in>
+            <Required>true</Required>
+            <Type>string</Type>
+            <Description>Version of the DigitalTwinsInstance Management API.</Description>
+        </parameter>
+        
+       
+    </uri-parameters>
+    
+    <request-body>
+        <attributes>
+            <name>location</name>
+            <Required>true</Required>
+            <Type>string</Type>
+            <Description>The resource location.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>identity</name>
+            <Type>DigitalTwinsIdentity</Type>
+            <Description>The managed identity for the DigitalTwinsInstance.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>properties.privateEndpointConnections</name>
+            <Type>PrivateEndpointConnection[]</Type>
+            <Description>The private endpoint connection of a Digital Twin.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>properties.publicNetworkAccess</name>
+            <Type>publicNetworkAccess</Type>
+            <Description>Public network access for the DigitalTwinsInstance.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>tags</name>
+            <Type>object</Type>
+            <Description>The resource tags.</Description>
+        </attributes>
+        
+        
+    </request-body>
+    
+    <responses>
+        <res-attributes>
+            <name>200 OK</name>
+            <Type>DigitalTwinsDescription</Type>
+            <Description>This is returned as a response when the resource already exists and was updated successfully.</Description>azure-digital-twins-explorer.png
+        </res-attributes>
+        
+        <res-attributes>
+            <name>201 Created</name>
+            <Type>DigitalTwinsDescription</Type>
+            <Description>Created - Put request accepted; the operation will complete asynchronously.</Description>
+        </res-attributes>
+        
+        <res-attributes>
+            <name>Other Status Codes</name>
+            <Type>ErrorResponse</Type>
+            <Description>Error response describing why the operation failed.</Description>
+        </res-attributes>       
+    </responses>
+    
+    <request-body>
+        <attributes>
+            <name>location</name>
+            <Required>true</Required>
+            <Type>string</Type>
+            <Description>The resource location.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>identity</name>
+            <Type>DigitalTwinsIdentity</Type>
+            <Description>The managed identity for the DigitalTwinsInstance.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>properties.privateEndpointConnections</name>
+            <Type>PrivateEndpointConnection[]</Type>
+            <Description>The private endpoint connection of a Digital Twin.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>properties.publicNetworkAccess</name>
+            <Type>publicNetworkAccess</Type>
+            <Description>Public network access for the DigitalTwinsInstance.</Description>
+        </attributes>
+        
+        <attributes>
+            <name>tags</name>
+            <Type>object</Type>
+            <Description>The resource tags.</Description>
+        </attributes>
+        
+        
+    </request-body>
+    
+    <security>
+        <security-attributes>
+            <type><bold>Type: </bold>oauth2</type>
+            <flow>Flow: implicit</flow>
+            <authorization_url>Authorization URL: https://login.microsoftonline.com/common/oauth2/authorize</authorization_url>
+            
+        </security-attributes>
+         <azure-auth-security>
+            <name>user_impersonation</name>
+            <Description>impersonate your user account</Description>azure-digital-twins-explorer.png
+        </azure-auth-security>
+    </security>
+</apiexample>
+
+
+
+
+
+
