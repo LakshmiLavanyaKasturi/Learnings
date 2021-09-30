@@ -1,0 +1,77 @@
+
+
+Discuss core concepts:
+
+IaaS, PaaS, SaaS 
+Public, private and hybrid cloud computing
+Benefits of cloud services: High availability, scalability, disaster recovery, elasticity, geo-distribution, Agility.
+
+Azure compute services:
+Azure Virtual Machines
+Provides IaaS. Helpful when running custom software and custom hosting positions.
+Azure Container Instances
+Used to deploy and manage containers.
+Azure App Service
+A PaaS that is used to quickly build, deploy and scale web, mobile, and API apps running on any platform.
+Azure Functions (or serverless computing)
+Functions are used when we are code focused and not platform.
+Kubernetes: Combination of Containerized management with API to create a cloud management power house. 
+Topics to strengthen:
+Defence index model layers:
+Perimeter: responsible for filtering large-scale attacks from networks including DDoS
+Identity and access layers: Controls access to infrastructure
+Network: Limits communication among network layers.
+ 
+Subscription boundaries for Azure subscription
+Billing boundaries: creation of subscription based on billing requirement
+Access control boundaries: creation of subscription based on departmental requirements and organizational structure
+ 
+Core Azure Identity services:
+Authentication based on location: conditional access
+Multi factor authentication (MFA) : Password and code sent to the mobile are warranted for authorization
+Single Sign-On(SSO): Authenticate once and access multiple systems
+ 
+Azure service life cycle:
+	
+Azure cost management has tools for monitoring, allocating and optimizing costs
+ 
+TCO: allows one to compare Azure costs to the current setup one has.
+ 
+21viaNet- Azure services in China
+ 
+Azure blueprints: set of roles, policies and templates that help with industry regulations
+Policies:  defines roles and restrictions
+Initiative: groups of policies
+ 
+Azure firewall: Control traffic going into the network
+Azure NSG ( Network Security Group) : Best tool for filtering virtual traffic by IP address, port or protocol.
+ 
+Azure Storage services:
+Blob: Videos and binary files
+File: Best utilized for file shares
+Table: NoSQL data
+Queue: Messages sent between applications
+Key Vault: SSL and TLS certificates
+ 
+ 
+Learn about 
+Azure HD insight: provides open source analytics for enterprises
+Azure Synapse Analytics: Allows for building large scale data warehouse and big data analytics
+Azure data bricks: Build AI solutions
+Azure data lake analytics:Uses queries to transform data
+ 
+ 
+Azure resources where cost factors:
+Resource types, services, locations, amount of ingress and egress traffic.
+Resource group is not a cost factor
+
+
+Azure monitor:
+Advisor
+Dev-Test labs
+
+Azure database services:
+Database for PostgreSQL
+Azure COSMOS DB
+Azure SQL database
+Azure database for mySQL
