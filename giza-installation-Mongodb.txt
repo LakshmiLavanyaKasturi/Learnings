@@ -1,0 +1,1683 @@
+root@DESKTOP-FG0H9LL:~# python
+
+Command 'python' not found, but can be installed with:
+
+apt install python3
+apt install python
+apt install python-minimal
+
+You also have python3 installed, you can run 'python3' instead.
+
+root@DESKTOP-FG0H9LL:~# python3
+Python 3.6.9 (default, Jan 26 2021, 15:33:00)
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+root@DESKTOP-FG0H9LL:~# cd /mnt/c/Users/lavan/work/docs-coding-challenge/
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# pyvenv venv
+WARNING: the pyenv script is deprecated in favour of `python3.6 -m venv`
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# python3 -m venv venv
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# source venv/bin/activate
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# pip3 install tornado motor docopt typing
+Collecting tornado
+  Downloading https://files.pythonhosted.org/packages/01/d1/8750ad20cbcefb499bb8b405e243f83c2c89f78d139e6f8c8d800640f554/tornado-6.1-cp36-cp36m-manylinux1_x86_64.whl (427kB)
+    100% |████████████████████████████████| 430kB 629kB/s
+Collecting motor
+  Downloading https://files.pythonhosted.org/packages/ce/95/84c414596d902251fe295fa6c7062df85cdfb17eaf234f83264a44d0900a/motor-2.5.1-py3-none-any.whl (55kB)
+    100% |████████████████████████████████| 61kB 1.2MB/s
+Collecting docopt
+  Downloading https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz
+Collecting typing
+  Downloading https://files.pythonhosted.org/packages/05/d9/6eebe19d46bd05360c9a9aae822e67a80f9242aabbfc58b641b957546607/typing-3.7.4.3.tar.gz (78kB)
+    100% |████████████████████████████████| 81kB 1.2MB/s
+Collecting pymongo<4,>=3.12 (from motor)
+  Downloading https://files.pythonhosted.org/packages/3b/60/a9d60e6d12c3d7a8ab955dc4da98922441e9b6d36ccab4a32d75f25ab1d4/pymongo-3.12.3-cp36-cp36m-manylinux1_x86_64.whl (507kB)
+    100% |████████████████████████████████| 512kB 909kB/s
+Building wheels for collected packages: docopt, typing
+  Running setup.py bdist_wheel for docopt ... error
+  Complete output from command /mnt/c/Users/lavan/work/docs-coding-challenge/venv/bin/python3.6 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-ugleuofl/docopt/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/tmph8n9vqlfpip-wheel- --python-tag cp36:
+  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: -c --help [cmd1 cmd2 ...]
+     or: -c --help-commands
+     or: -c cmd --help
+
+  error: invalid command 'bdist_wheel'
+
+  ----------------------------------------
+  Failed building wheel for docopt
+  Running setup.py clean for docopt
+  Running setup.py bdist_wheel for typing ... error
+  Complete output from command /mnt/c/Users/lavan/work/docs-coding-challenge/venv/bin/python3.6 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-ugleuofl/typing/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/tmpf0wv9ctcpip-wheel- --python-tag cp36:
+  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: -c --help [cmd1 cmd2 ...]
+     or: -c --help-commands
+     or: -c cmd --help
+
+  error: invalid command 'bdist_wheel'
+
+  ----------------------------------------
+  Failed building wheel for typing
+  Running setup.py clean for typing
+Failed to build docopt typing
+Installing collected packages: tornado, pymongo, motor, docopt, typing
+  Running setup.py install for docopt ... done
+  Running setup.py install for typing ... done
+Successfully installed docopt-0.6.2 motor-2.5.1 pymongo-3.12.3 tornado-6.1 typing-3.7.4.3
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# pip3 freeze
+docopt==0.6.2
+motor==2.5.1
+pkg-resources==0.0.0
+pymongo==3.12.3
+tornado==6.1
+typing==3.7.4.3
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mkdir data
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod --dbpath=`pwd`/data --logpath mongod.log --fork
+
+Command 'mongod' not found, but can be installed with:
+
+apt install mongodb-server-core
+
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# apt install mongodb-server-core
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libboost-filesystem1.65.1 libboost-program-options1.65.1 libboost-system1.65.1 libgoogle-perftools4 libpcrecpp0v5
+  libstemmer0d libtcmalloc-minimal4 libyaml-cpp0.5v5
+The following NEW packages will be installed:
+  libboost-filesystem1.65.1 libboost-program-options1.65.1 libboost-system1.65.1 libgoogle-perftools4 libpcrecpp0v5
+  libstemmer0d libtcmalloc-minimal4 libyaml-cpp0.5v5 mongodb-server-core
+0 upgraded, 9 newly installed, 0 to remove and 233 not upgraded.
+Need to get 21.0 MB of archives.
+After this operation, 75.9 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 libboost-system1.65.1 amd64 1.65.1+dfsg-0ubuntu5 [10.5 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libboost-filesystem1.65.1 amd64 1.65.1+dfsg-0ubuntu5 [40.3 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 libboost-program-options1.65.1 amd64 1.65.1+dfsg-0ubuntu5 [137 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libtcmalloc-minimal4 amd64 2.5-2.2ubuntu3 [91.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgoogle-perftools4 amd64 2.5-2.2ubuntu3 [190 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpcrecpp0v5 amd64 2:8.39-9 [15.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 libstemmer0d amd64 0+svn585-1build1 [62.5 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libyaml-cpp0.5v5 amd64 0.5.2-4ubuntu1 [150 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 mongodb-server-core amd64 1:3.6.3-0ubuntu1.4 [20.3 MB]
+Fetched 21.0 MB in 53s (394 kB/s)
+Selecting previously unselected package libboost-system1.65.1:amd64.
+(Reading database ... 54045 files and directories currently installed.)
+Preparing to unpack .../0-libboost-system1.65.1_1.65.1+dfsg-0ubuntu5_amd64.deb ...
+Unpacking libboost-system1.65.1:amd64 (1.65.1+dfsg-0ubuntu5) ...
+Selecting previously unselected package libboost-filesystem1.65.1:amd64.
+Preparing to unpack .../1-libboost-filesystem1.65.1_1.65.1+dfsg-0ubuntu5_amd64.deb ...
+Unpacking libboost-filesystem1.65.1:amd64 (1.65.1+dfsg-0ubuntu5) ...
+Selecting previously unselected package libboost-program-options1.65.1:amd64.
+Preparing to unpack .../2-libboost-program-options1.65.1_1.65.1+dfsg-0ubuntu5_amd64.deb ...
+Unpacking libboost-program-options1.65.1:amd64 (1.65.1+dfsg-0ubuntu5) ...
+Selecting previously unselected package libtcmalloc-minimal4.
+Preparing to unpack .../3-libtcmalloc-minimal4_2.5-2.2ubuntu3_amd64.deb ...
+Unpacking libtcmalloc-minimal4 (2.5-2.2ubuntu3) ...
+Selecting previously unselected package libgoogle-perftools4.
+Preparing to unpack .../4-libgoogle-perftools4_2.5-2.2ubuntu3_amd64.deb ...
+Unpacking libgoogle-perftools4 (2.5-2.2ubuntu3) ...
+Selecting previously unselected package libpcrecpp0v5:amd64.
+Preparing to unpack .../5-libpcrecpp0v5_2%3a8.39-9_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.39-9) ...
+Selecting previously unselected package libstemmer0d:amd64.
+Preparing to unpack .../6-libstemmer0d_0+svn585-1build1_amd64.deb ...
+Unpacking libstemmer0d:amd64 (0+svn585-1build1) ...
+Selecting previously unselected package libyaml-cpp0.5v5:amd64.
+Preparing to unpack .../7-libyaml-cpp0.5v5_0.5.2-4ubuntu1_amd64.deb ...
+Unpacking libyaml-cpp0.5v5:amd64 (0.5.2-4ubuntu1) ...
+Selecting previously unselected package mongodb-server-core.
+Preparing to unpack .../8-mongodb-server-core_1%3a3.6.3-0ubuntu1.4_amd64.deb ...
+Unpacking mongodb-server-core (1:3.6.3-0ubuntu1.4) ...
+Setting up libstemmer0d:amd64 (0+svn585-1build1) ...
+Setting up libboost-system1.65.1:amd64 (1.65.1+dfsg-0ubuntu5) ...
+Setting up libtcmalloc-minimal4 (2.5-2.2ubuntu3) ...
+Setting up libgoogle-perftools4 (2.5-2.2ubuntu3) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up libpcrecpp0v5:amd64 (2:8.39-9) ...
+Setting up libyaml-cpp0.5v5:amd64 (0.5.2-4ubuntu1) ...
+Setting up libboost-program-options1.65.1:amd64 (1.65.1+dfsg-0ubuntu5) ...
+Setting up libboost-filesystem1.65.1:amd64 (1.65.1+dfsg-0ubuntu5) ...
+Setting up mongodb-server-core (1:3.6.3-0ubuntu1.4) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod --dbpath=`pwd`/data --logpath mongod.log --fork
+about to fork child process, waiting until server is ready for connections.
+forked process: 845
+ERROR: child process failed, exited with error number 14
+To see additional information in this output, start without the "--fork" option.
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod --dbpath=`pwd`/data --logpath mongod.log
+2021-12-11T22:47:25.543-0800 I CONTROL  [main] log file "/mnt/c/Users/lavan/work/docs-coding-challenge/mongod.log" exists; moved to "/mnt/c/Users/lavan/work/docs-coding-challenge/mongod.log.2021-12-12T06-47-25".
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod --dbpath=`pwd`/data --logpath mongod.log --fork
+about to fork child process, waiting until server is ready for connections.
+forked process: 855
+ERROR: child process failed, exited with error number 14
+To see additional information in this output, start without the "--fork" option.
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod --dbpath=$mnt/c/Users/lavan/work/docs-coding-challenge/data --logpath mongod.log --fork
+about to fork child process, waiting until server is ready for connections.
+forked process: 860
+ERROR: child process failed, exited with error number 100
+To see additional information in this output, start without the "--fork" option.
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod
+2021-12-11T22:52:45.616-0800 I CONTROL  [initandlisten] MongoDB starting : pid=863 port=27017 dbpath=/data/db 64-bit host=DESKTOP-FG0H9LL
+2021-12-11T22:52:45.618-0800 I CONTROL  [initandlisten] db version v3.6.3
+2021-12-11T22:52:45.620-0800 I CONTROL  [initandlisten] git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
+2021-12-11T22:52:45.623-0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+2021-12-11T22:52:45.625-0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2021-12-11T22:52:45.627-0800 I CONTROL  [initandlisten] modules: none
+2021-12-11T22:52:45.630-0800 I CONTROL  [initandlisten] build environment:
+2021-12-11T22:52:45.632-0800 I CONTROL  [initandlisten]     distarch: x86_64
+2021-12-11T22:52:45.634-0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2021-12-11T22:52:45.636-0800 I CONTROL  [initandlisten] options: {}
+2021-12-11T22:52:45.639-0800 I STORAGE  [initandlisten] exception in initAndListen: NonExistentPath: Data directory /data/db not found., terminating
+2021-12-11T22:52:45.645-0800 I CONTROL  [initandlisten] now exiting
+2021-12-11T22:52:45.646-0800 I CONTROL  [initandlisten] shutting down with code:100
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# cd `pwd`
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# cd
+(venv) root@DESKTOP-FG0H9LL:~# cd -
+/mnt/c/Users/lavan/work/docs-coding-challenge
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# cd -
+/root
+(venv) root@DESKTOP-FG0H9LL:~# cd `cd -`
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod -dbpath=/mnt/c/Users/lavan/work/docs-coding-challenge/^C
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mkdir data
+mkdir: cannot create directory ‘data’: File exists
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod -dbpath=`pwd`/data
+2021-12-11T22:55:42.868-0800 I CONTROL  [initandlisten] MongoDB starting : pid=884 port=27017 dbpath=/mnt/c/Users/lavan/work/docs-coding-challenge/data 64-bit host=DESKTOP-FG0H9LL
+2021-12-11T22:55:42.869-0800 I CONTROL  [initandlisten] db version v3.6.3
+2021-12-11T22:55:42.870-0800 I CONTROL  [initandlisten] git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
+2021-12-11T22:55:42.870-0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+2021-12-11T22:55:42.870-0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2021-12-11T22:55:42.870-0800 I CONTROL  [initandlisten] modules: none
+2021-12-11T22:55:42.870-0800 I CONTROL  [initandlisten] build environment:
+2021-12-11T22:55:42.871-0800 I CONTROL  [initandlisten]     distarch: x86_64
+2021-12-11T22:55:42.871-0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2021-12-11T22:55:42.871-0800 I CONTROL  [initandlisten] options: { storage: { dbPath: "/mnt/c/Users/lavan/work/docs-coding-challenge/data" } }
+2021-12-11T22:55:42.875-0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7625M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2021-12-11T22:55:43.545-0800 E STORAGE  [initandlisten] WiredTiger error (17) [1639292143:545853][884:0x7f37213a10c0], connection: /mnt/c/Users/lavan/work/docs-coding-challenge/data/WiredTiger.wt: handle-open: open: File exists
+2021-12-11T22:55:43.552-0800 I STORAGE  [initandlisten] WiredTiger message unexpected file WiredTiger.wt found, renamed to WiredTiger.wt.3
+2021-12-11T22:55:43.559-0800 E STORAGE  [initandlisten] WiredTiger error (22) [1639292143:559002][884:0x7f37213a10c0], connection: /mnt/c/Users/lavan/work/docs-coding-challenge/data/: directory-sync: fdatasync: Invalid argument
+2021-12-11T22:55:43.565-0800 F -        [initandlisten] Fatal Assertion 28561 at src/mongo/db/storage/wiredtiger/wiredtiger_kv_engine.cpp 410
+2021-12-11T22:55:43.566-0800 F -        [initandlisten]
+
+***aborting after fassert() failure
+
+
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# mongod --version
+db version v3.6.3
+git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+allocator: tcmalloc
+modules: none
+build environment:
+    distarch: x86_64
+    target_arch: x86_64
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# apt-get upgrade mongod
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package mongod
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# ./sample.py
+Running!
+        hERROR:tornado.application:Uncaught exception GET / (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5919', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/web.py", line 1704, in _execute
+    result = await result
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 278, in get
+    await self.ws_connection.accept_connection(self)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 879, in accept_connection
+    await self._accept_connection(handler)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 962, in _accept_connection
+    await self._receive_frame_loop()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1116, in _receive_frame_loop
+    await self._receive_frame()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1207, in _receive_frame
+    await handled_future
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 234, in wrapper
+    yielded = ctx_run(next, result)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 162, in _fake_ctx_run
+    return f(*args, **kw)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/hopps.py", line 191, in on_message
+    parsed = json.loads(message, 'utf-8')
+TypeError: loads() takes 1 positional argument but 2 were given
+ERROR:tornado.application:Exception in callback functools.partial(<function WebSocketProtocol._run_callback.<locals>.<lambda> at 0x7ff7db3ccd90>, <Future finished exception=TypeError('loads() takes 1 positional argument but 2 were given',)>)
+Traceback (most recent call last):
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/ioloop.py", line 741, in _run_callback
+    ret = callback()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 656, in <lambda>
+    self.stream.io_loop.add_future(result, lambda f: f.result())
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/web.py", line 1704, in _execute
+    result = await result
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 278, in get
+    await self.ws_connection.accept_connection(self)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 879, in accept_connection
+    await self._accept_connection(handler)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 962, in _accept_connection
+    await self._receive_frame_loop()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1116, in _receive_frame_loop
+    await self._receive_frame()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1207, in _receive_frame
+    await handled_future
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 234, in wrapper
+    yielded = ctx_run(next, result)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 162, in _fake_ctx_run
+    return f(*args, **kw)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/hopps.py", line 191, in on_message
+    parsed = json.loads(message, 'utf-8')
+TypeError: loads() takes 1 positional argument but 2 were given
+ERROR:tornado.application:Uncaught exception GET / (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5919', method='GET', uri='/', version='HTTP/1.1', remote_ip='127.0.0.1')
+Traceback (most recent call last):
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/web.py", line 1704, in _execute
+    result = await result
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 278, in get
+    await self.ws_connection.accept_connection(self)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 879, in accept_connection
+    await self._accept_connection(handler)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 962, in _accept_connection
+    await self._receive_frame_loop()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1116, in _receive_frame_loop
+    await self._receive_frame()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1207, in _receive_frame
+    await handled_future
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 234, in wrapper
+    yielded = ctx_run(next, result)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 162, in _fake_ctx_run
+    return f(*args, **kw)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/hopps.py", line 191, in on_message
+    parsed = json.loads(message, 'utf-8')
+TypeError: loads() takes 1 positional argument but 2 were given
+ERROR:tornado.application:Exception in callback functools.partial(<function WebSocketProtocol._run_callback.<locals>.<lambda> at 0x7ff7dd65d1e0>, <Future finished exception=TypeError('loads() takes 1 positional argument but 2 were given',)>)
+Traceback (most recent call last):
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/ioloop.py", line 741, in _run_callback
+    ret = callback()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 656, in <lambda>
+    self.stream.io_loop.add_future(result, lambda f: f.result())
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/web.py", line 1704, in _execute
+    result = await result
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 278, in get
+    await self.ws_connection.accept_connection(self)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 879, in accept_connection
+    await self._accept_connection(handler)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 962, in _accept_connection
+    await self._receive_frame_loop()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1116, in _receive_frame_loop
+    await self._receive_frame()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/websocket.py", line 1207, in _receive_frame
+    await handled_future
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 234, in wrapper
+    yielded = ctx_run(next, result)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/gen.py", line 162, in _fake_ctx_run
+    return f(*args, **kw)
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/hopps.py", line 191, in on_message
+    parsed = json.loads(message, 'utf-8')
+TypeError: loads() takes 1 positional argument but 2 were given
+^CTraceback (most recent call last):
+  File "./sample.py", line 37, in <module>
+    main()
+  File "./sample.py", line 34, in main
+    tornado.ioloop.IOLoop.instance().start()
+  File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/tornado/platform/asyncio.py", line 199, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/lib/python3.6/asyncio/base_events.py", line 438, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.6/asyncio/base_events.py", line 1415, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/lib/python3.6/selectors.py", line 445, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# save foo '{"_id": "ff36cf3a-fd3b-431e-863e-5dc89d4f075e", "name": "Bob", "n": 42}'
+
+Command 'save' not found, but can be installed with:
+
+apt install atfs
+
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# apt install atfs
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libatfs1
+The following NEW packages will be installed:
+  atfs libatfs1
+0 upgraded, 2 newly installed, 0 to remove and 233 not upgraded.
+Need to get 265 kB of archives.
+Selecting previously unselected package libatfs1.pace will be used.
+(Reading database ... 54110 files and directories currently installed.)
+Preparing to unpack .../libatfs1_1.4pl6-14_amd64.deb ...
+Unpacking libatfs1 (1.4pl6-14) ...
+Selecting previously unselected package atfs.
+Preparing to unpack .../atfs_1.4pl6-14_amd64.deb ...
+Unpacking atfs (1.4pl6-14) ...
+Setting up libatfs1 (1.4pl6-14) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# save foo '{"_id": "ff36cf3a-fd3b-431e-863e-5dc89d4f075e", "name": "Bob", "n": 42}'
+foo: nothing found -- skipped.
+{"_id": "ff36cf3a-fd3b-431e-863e-5dc89d4f075e", "name": "Bob", "n": 42}: nothing found -- skipped.
+done. http://archive.ubuntu.com/ubuntu bionic/universe amd64 atfs amd64 1.4pl6-14 [160 kB]
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# apt remove atfs
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libatfs1
+Use 'apt autoremove' to remove it.
+The following packages will be REMOVED:
+  atfs
+0 upgraded, 0 newly installed, 1 to remove and 233 not upgraded.
+After this operation, 467 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 54187 files and directories currently installed.)
+Removing atfs (1.4pl6-14) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs-coding-challenge# cd ..
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# pip install giza
+Collecting giza
+  Downloading https://files.pythonhosted.org/packages/35/2e/dcf5b1c068ada0cd2919c65bf2c24028fee2ba790416df8908697525fa28/giza-0.5.18.tar.gz (121kB)
+    100% |████████████████████████████████| 122kB 16kB/s
+Collecting argh (from giza)
+  Downloading https://files.pythonhosted.org/packages/06/1c/e667a7126f0b84aaa1c56844337bf0ac12445d1beb9c8a6199a7314944bf/argh-0.26.2-py2.py3-none-any.whl
+Collecting docutils (from giza)
+  Downloading https://files.pythonhosted.org/packages/8d/14/69b4bad34e3f250afe29a854da03acb6747711f3df06c359fa053fae4e76/docutils-0.18.1-py2.py3-none-any.whl (570kB)
+    100% |████████████████████████████████| 573kB 111kB/s
+Collecting fett (from giza)
+  Downloading https://files.pythonhosted.org/packages/a6/fb/d4f8e22ea58cfb4a86f617982f037d3fd057491b50d8f0fe81495c2f6f64/fett-0.3.2.tar.gz
+Collecting hieroglyph (from giza)
+  Downloading https://files.pythonhosted.org/packages/aa/7e/f14e6e87d13e729b8b17b065316076f2f3b17111e32dc95646dc5c6a3ab1/hieroglyph-2.1.0-py2.py3-none-any.whl (1.5MB)
+    100% |████████████████████████████████| 1.5MB 131kB/s
+Collecting jinja2 (from giza)
+  Using cached https://files.pythonhosted.org/packages/20/9a/e5d9ec41927401e41aea8af6d16e78b5e612bca4699d417f646a9610a076/Jinja2-3.0.3-py3-none-any.whl
+Collecting jira (from giza)
+  Downloading https://files.pythonhosted.org/packages/fe/84/eeeb4523d2ff0b5ba33a9b9bc5721a96406e6a94bc0398b24b3aa7bc5a56/jira-3.1.1-py3-none-any.whl (67kB)
+    100% |████████████████████████████████| 71kB 159kB/s
+Collecting jsx-lexer (from giza)
+  Downloading https://files.pythonhosted.org/packages/39/1c/52077c2225d822118907fe3291958c4b9dd57c3beb243e19312893acccc1/jsx_lexer-1.0.0-py2.py3-none-any.whl
+Collecting onetimepass (from giza)
+  Downloading https://files.pythonhosted.org/packages/aa/b2/cb6832704aaf11ed0e471910a8da360129e2c23398d2ea3a71961a2f5746/onetimepass-1.0.1.tar.gz
+Collecting polib (from giza)
+  Downloading https://files.pythonhosted.org/packages/9e/ee/54d6c558d4319a26145658584acb373d50ba0968eb9c19fedfb42458314a/polib-1.1.1-py2.py3-none-any.whl
+Collecting pyyaml (from giza)
+  Downloading https://files.pythonhosted.org/packages/b3/85/79b9e5b4e8d3c0ac657f4e8617713cca8408f6cdc65d2ee6554217cedff1/PyYAML-6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (603kB)
+    100% |████████████████████████████████| 604kB 20kB/s
+Collecting rstcloth<0.3,>=0.2.5 (from giza)
+  Downloading https://files.pythonhosted.org/packages/bb/56/1584963d07c8b913d25c7ce00a05f2ad2fb4ac05fc0598fec3490efa686c/rstcloth-0.2.6.tar.gz
+    Complete output from command python setup.py egg_info:
+    Download error on https://pypi.python.org/simple/nose/: [Errno -3] Temporary failure in name resolution -- Some packages may not be found!
+    Couldn't find index page for 'nose' (maybe misspelled?)
+    No local packages or working download links found for nose
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-mj54busy/rstcloth/setup.py", line 26, in <module>
+        'rstable = rstcloth.table:main',
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/setuptools/__init__.py", line 128, in setup
+        _install_setup_requires(attrs)
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/setuptools/__init__.py", line 123, in _install_setup_requires
+        dist.fetch_build_eggs(dist.setup_requires)
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/setuptools/dist.py", line 513, in fetch_build_eggs
+        replace_conflicting=True,
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/pkg_resources/__init__.py", line 774, in resolve
+        replace_conflicting=replace_conflicting
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/pkg_resources/__init__.py", line 1057, in best_match
+        return self.obtain(req, installer)
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/pkg_resources/__init__.py", line 1069, in obtain
+        return installer(requirement)
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/setuptools/dist.py", line 580, in fetch_build_egg
+        return cmd.easy_install(req)
+      File "/mnt/c/Users/lavan/work/docs-coding-challenge/venv/lib/python3.6/site-packages/setuptools/command/easy_install.py", line 692, in easy_install
+        raise DistutilsError(msg)
+    distutils.errors.DistutilsError: Could not find suitable distribution for Requirement.parse('nose')
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-mj54busy/rstcloth/
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# pip list
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+docopt (0.6.2)
+motor (2.5.1)
+pip (9.0.1)
+pkg-resources (0.0.0)
+pymongo (3.12.3)
+setuptools (39.0.1)
+tornado (6.1)
+typing (3.7.4.3)
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# pip install ez_setup
+Collecting ez_setup
+  Downloading https://files.pythonhosted.org/packages/ba/2c/743df41bd6b3298706dfe91b0c7ecdc47f2dc1a3104abeb6e9aa4a45fa5d/ez_setup-0.9.tar.gz
+Building wheels for collected packages: ez-setup
+  Running setup.py bdist_wheel for ez-setup ... error
+  Complete output from command /mnt/c/Users/lavan/work/docs-coding-challenge/venv/bin/python3.6 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-t19fz4r6/ez-setup/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/tmprl59ik7hpip-wheel- --python-tag cp36:
+  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: -c --help [cmd1 cmd2 ...]
+     or: -c --help-commands
+     or: -c cmd --help
+
+  error: invalid command 'bdist_wheel'
+
+  ----------------------------------------
+  Failed building wheel for ez-setup
+  Running setup.py clean for ez-setup
+Failed to build ez-setup
+Installing collected packages: ez-setup
+  Running setup.py install for ez-setup ... done
+Successfully installed ez-setup-0.9
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# pip3 freeze
+docopt==0.6.2
+ez-setup==0.9
+motor==2.5.1
+pkg-resources==0.0.0
+pymongo==3.12.3
+tornado==6.1
+typing==3.7.4.3
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python --version
+Python 3.6.9
+(venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# deactivate
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# ls
+MongoDB_drivers_java_documentation  docs-coding-challenge  docs-java  leapfrog-frontend-develop  mongodb-sphinx
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# apt-get install python2
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package python2
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python --version
+
+Command 'python' not found, but can be installed with:
+
+apt install python3
+apt install python
+apt install python-minimal
+
+You also have python3 installed, you can run 'python3' instead.
+
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# apt install python
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libatfs1
+Use 'apt autoremove' to remove it.
+The following additional packages will be installed:
+  libpython-stdlib python-minimal python2.7 python2.7-minimal
+Suggested packages:
+  python-doc python-tk python2.7-doc binutils binfmt-support
+The following NEW packages will be installed:
+  libpython-stdlib python python-minimal python2.7 python2.7-minimal
+0 upgraded, 5 newly installed, 0 to remove and 233 not upgraded.
+Need to get 1715 kB of archives.
+After this operation, 4988 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7-minimal amd64 2.7.17-1~18.04ubuntu1.6 [1291 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-minimal amd64 2.7.15~rc1-1 [28.1 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7 amd64 2.7.17-1~18.04ubuntu1.6 [248 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpython-stdlib amd64 2.7.15~rc1-1 [7620 B]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 python amd64 2.7.15~rc1-1 [140 kB]
+Fetched 1715 kB in 28s (61.8 kB/s)
+Selecting previously unselected package python2.7-minimal.
+(Reading database ... 54122 files and directories currently installed.)
+Preparing to unpack .../python2.7-minimal_2.7.17-1~18.04ubuntu1.6_amd64.deb ...
+Unpacking python2.7-minimal (2.7.17-1~18.04ubuntu1.6) ...
+Selecting previously unselected package python-minimal.
+Preparing to unpack .../python-minimal_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../python2.7_2.7.17-1~18.04ubuntu1.6_amd64.deb ...
+Unpacking python2.7 (2.7.17-1~18.04ubuntu1.6) ...
+Selecting previously unselected package libpython-stdlib:amd64.
+Preparing to unpack .../libpython-stdlib_2.7.15~rc1-1_amd64.deb ...
+Unpacking libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Setting up python2.7-minimal (2.7.17-1~18.04ubuntu1.6) ...
+Linking and byte-compiling packages for runtime python2.7...
+Setting up python-minimal (2.7.15~rc1-1) ...
+Selecting previously unselected package python.
+(Reading database ... 54179 files and directories currently installed.)
+Preparing to unpack .../python_2.7.15~rc1-1_amd64.deb ...
+Unpacking python (2.7.15~rc1-1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Setting up python2.7 (2.7.17-1~18.04ubuntu1.6) ...
+Setting up libpython-stdlib:amd64 (2.7.15~rc1-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up python (2.7.15~rc1-1) ...
+W: APT had planned for dpkg to do more than it reported back (10 vs 26).
+   Affected packages: libpython-stdlib:amd64 python-minimal:amd64 python2.7:amd64
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python -m pip install giza
+/usr/bin/python: No module named pip
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python
+Python 2.7.17 (default, Feb 27 2021, 15:10:58)
+[GCC 7.5.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python2
+Python 2.7.17 (default, Feb 27 2021, 15:10:58)
+[GCC 7.5.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python2 -m pip install giza
+/usr/bin/python2: No module named pip
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# apt install pip
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+E: Unable to locate package pip
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python -m pip --version
+/usr/bin/python: No module named pip
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# apt install python-pip
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libatfs1
+Use 'apt autoremove' to remove it.
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu build-essential cpp-7 dpkg-dev fakeroot g++ g++-7 gcc gcc-7 gcc-7-base libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan4
+  libatomic1 libbinutils libc-dev-bin libc6 libc6-dev libcc1-0 libcilkrts5 libdpkg-perl libexpat1 libexpat1-dev libfakeroot libfile-fcntllock-perl libgcc-7-dev libitm1 liblsan0 libmpx2 libpython-all-dev
+  libpython-dev libpython2.7-dev libquadmath0 libstdc++-7-dev libtsan0 libubsan0 linux-libc-dev make manpages-dev python-all python-all-dev python-asn1crypto python-cffi-backend python-crypto
+  python-cryptography python-dbus python-dev python-enum34 python-gi python-idna python-ipaddress python-keyring python-keyrings.alt python-pkg-resources python-secretstorage python-setuptools python-six
+  python-wheel python-xdg python2.7-dev
+Suggested packages:
+  binutils-doc gcc-7-locales debian-keyring g++-multilib g++-7-multilib gcc-7-doc libstdc++6-7-dbg gcc-multilib autoconf automake libtool flex bison gdb gcc-doc gcc-7-multilib libgcc1-dbg libgomp1-dbg
+  libitm1-dbg libatomic1-dbg libasan4-dbg liblsan0-dbg libtsan0-dbg libubsan0-dbg libcilkrts5-dbg libmpx2-dbg libquadmath0-dbg glibc-doc bzr libstdc++-7-doc make-doc python-crypto-doc python-cryptography-doc
+  python-cryptography-vectors python-dbus-dbg python-dbus-doc python-enum34-doc python-gi-cairo gnome-keyring libkf5wallet-bin gir1.2-gnomekeyring-1.0 python-fs python-gdata python-keyczar
+  python-secretstorage-doc python-setuptools-doc
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu build-essential dpkg-dev fakeroot g++ g++-7 gcc gcc-7 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan4 libatomic1
+  libbinutils libc-dev-bin libc6-dev libcc1-0 libcilkrts5 libdpkg-perl libexpat1-dev libfakeroot libfile-fcntllock-perl libgcc-7-dev libitm1 liblsan0 libmpx2 libpython-all-dev libpython-dev libpython2.7-dev
+  libquadmath0 libstdc++-7-dev libtsan0 libubsan0 linux-libc-dev make manpages-dev python-all python-all-dev python-asn1crypto python-cffi-backend python-crypto python-cryptography python-dbus python-dev
+  python-enum34 python-gi python-idna python-ipaddress python-keyring python-keyrings.alt python-pip python-pkg-resources python-secretstorage python-setuptools python-six python-wheel python-xdg python2.7-dev
+The following packages will be upgraded:
+  cpp-7 gcc-7-base libc6 libexpat1
+4 upgraded, 60 newly installed, 0 to remove and 229 not upgraded.
+Need to get 75.6 MB of archives.
+After this operation, 192 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libc6 amd64 2.27-3ubuntu1.4 [2832 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1 amd64 2.2.5-3ubuntu0.2 [80.5 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 binutils-common amd64 2.30-21ubuntu1~18.04.7 [197 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libbinutils amd64 2.30-21ubuntu1~18.04.7 [489 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.30-21ubuntu1~18.04.7 [1839 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 binutils amd64 2.30-21ubuntu1~18.04.7 [3388 B]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libc-dev-bin amd64 2.27-3ubuntu1.4 [71.8 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-163.171 [994 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libc6-dev amd64 2.27-3ubuntu1.4 [2585 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 cpp-7 amd64 7.5.0-3ubuntu1~18.04 [8591 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gcc-7-base amd64 7.5.0-3ubuntu1~18.04 [18.3 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcc1-0 amd64 8.4.0-1ubuntu1~18.04 [39.4 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libitm1 amd64 8.4.0-1ubuntu1~18.04 [27.9 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libatomic1 amd64 8.4.0-1ubuntu1~18.04 [9192 B]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libasan4 amd64 7.5.0-3ubuntu1~18.04 [358 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 liblsan0 amd64 8.4.0-1ubuntu1~18.04 [133 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libtsan0 amd64 8.4.0-1ubuntu1~18.04 [288 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libubsan0 amd64 7.5.0-3ubuntu1~18.04 [126 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcilkrts5 amd64 7.5.0-3ubuntu1~18.04 [42.5 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmpx2 amd64 8.4.0-1ubuntu1~18.04 [11.6 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libquadmath0 amd64 8.4.0-1ubuntu1~18.04 [134 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libgcc-7-dev amd64 7.5.0-3ubuntu1~18.04 [2378 kB]
+Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gcc-7 amd64 7.5.0-3ubuntu1~18.04 [9381 kB]
+Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gcc amd64 4:7.4.0-1ubuntu2.3 [5184 B]
+Get:25 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libstdc++-7-dev amd64 7.5.0-3ubuntu1~18.04 [1471 kB]
+Get:26 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 g++-7 amd64 7.5.0-3ubuntu1~18.04 [9697 kB]
+Get:27 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 g++ amd64 4:7.4.0-1ubuntu2.3 [1568 B]
+Get:28 http://archive.ubuntu.com/ubuntu bionic/main amd64 make amd64 4.1-9.1ubuntu1 [154 kB]
+Get:29 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdpkg-perl all 1.19.0.5ubuntu2.3 [211 kB]
+Get:30 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dpkg-dev all 1.19.0.5ubuntu2.3 [607 kB]
+Get:31 http://archive.ubuntu.com/ubuntu bionic/main amd64 build-essential amd64 12.4ubuntu1 [4758 B]
+Get:32 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfakeroot amd64 1.22-2ubuntu1 [25.9 kB]
+Get:33 http://archive.ubuntu.com/ubuntu bionic/main amd64 fakeroot amd64 1.22-2ubuntu1 [62.3 kB]
+Get:34 http://archive.ubuntu.com/ubuntu bionic/main amd64 libalgorithm-diff-perl all 1.19.03-1 [47.6 kB]
+Get:35 http://archive.ubuntu.com/ubuntu bionic/main amd64 libalgorithm-diff-xs-perl amd64 0.04-5 [11.1 kB]
+Get:36 http://archive.ubuntu.com/ubuntu bionic/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+Get:37 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1-dev amd64 2.2.5-3ubuntu0.2 [122 kB]
+Get:38 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfile-fcntllock-perl amd64 0.22-3build2 [33.2 kB]
+Get:39 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython2.7-dev amd64 2.7.17-1~18.04ubuntu1.6 [28.3 MB]
+Get:40 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpython-dev amd64 2.7.15~rc1-1 [7684 B]
+Get:41 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpython-all-dev amd64 2.7.15~rc1-1 [1092 B]
+Get:42 http://archive.ubuntu.com/ubuntu bionic/main amd64 manpages-dev all 4.15-1 [2217 kB]
+Get:43 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-all amd64 2.7.15~rc1-1 [1076 B]
+Get:44 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python2.7-dev amd64 2.7.17-1~18.04ubuntu1.6 [279 kB]
+Get:45 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-dev amd64 2.7.15~rc1-1 [1256 B]
+Get:46 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-all-dev amd64 2.7.15~rc1-1 [1100 B]
+Get:47 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-asn1crypto all 0.24.0-1 [72.7 kB]
+Get:48 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-cffi-backend amd64 1.11.5-1 [63.4 kB]
+Get:49 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-crypto amd64 2.6.1-8ubuntu2 [244 kB]
+Get:50 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-enum34 all 1.1.6-2 [34.8 kB]
+Get:51 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-idna all 2.6-1 [32.4 kB]
+Get:52 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-ipaddress all 1.0.17-1 [18.2 kB]
+Get:53 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-six all 1.11.0-2 [11.3 kB]
+Get:54 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-cryptography amd64 2.1.4-1ubuntu1.4 [276 kB]
+Get:55 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-dbus amd64 1.2.6-1 [90.2 kB]
+Get:56 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-gi amd64 3.26.1-2ubuntu1 [197 kB]
+Get:57 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-secretstorage all 2.3.1-2 [11.8 kB]
+Get:58 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-keyring all 10.6.0-1 [30.6 kB]
+Get:59 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-keyrings.alt all 3.0-1 [16.7 kB]
+Get:60 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python-pip all 9.0.1-2.3~ubuntu1.18.04.5 [151 kB]
+Get:61 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-pkg-resources all 39.0.1-2 [128 kB]
+Get:62 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-setuptools all 39.0.1-2 [329 kB]
+Get:63 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-wheel all 0.30.0-0.2 [36.4 kB]
+Get:64 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python-xdg all 0.25-4ubuntu1.1 [31.2 kB]
+Fetched 75.6 MB in 5min 21s (236 kB/s)
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+(Reading database ... 54232 files and directories currently installed.)
+Preparing to unpack .../libc6_2.27-3ubuntu1.4_amd64.deb ...
+Unpacking libc6:amd64 (2.27-3ubuntu1.4) over (2.27-3ubuntu1) ...
+Setting up libc6:amd64 (2.27-3ubuntu1.4) ...
+(Reading database ... 54232 files and directories currently installed.)
+Preparing to unpack .../00-libexpat1_2.2.5-3ubuntu0.2_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.5-3ubuntu0.2) over (2.2.5-3) ...
+Selecting previously unselected package binutils-common:amd64.
+Preparing to unpack .../01-binutils-common_2.30-21ubuntu1~18.04.7_amd64.deb ...
+Unpacking binutils-common:amd64 (2.30-21ubuntu1~18.04.7) ...
+Selecting previously unselected package libbinutils:amd64.
+Preparing to unpack .../02-libbinutils_2.30-21ubuntu1~18.04.7_amd64.deb ...
+Unpacking libbinutils:amd64 (2.30-21ubuntu1~18.04.7) ...
+Selecting previously unselected package binutils-x86-64-linux-gnu.
+Preparing to unpack .../03-binutils-x86-64-linux-gnu_2.30-21ubuntu1~18.04.7_amd64.deb ...
+Unpacking binutils-x86-64-linux-gnu (2.30-21ubuntu1~18.04.7) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../04-binutils_2.30-21ubuntu1~18.04.7_amd64.deb ...
+Unpacking binutils (2.30-21ubuntu1~18.04.7) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../05-libc-dev-bin_2.27-3ubuntu1.4_amd64.deb ...
+Unpacking libc-dev-bin (2.27-3ubuntu1.4) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../06-linux-libc-dev_4.15.0-163.171_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.15.0-163.171) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../07-libc6-dev_2.27-3ubuntu1.4_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.27-3ubuntu1.4) ...
+Preparing to unpack .../08-cpp-7_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking cpp-7 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04.1) ...
+Preparing to unpack .../09-gcc-7-base_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking gcc-7-base:amd64 (7.5.0-3ubuntu1~18.04) over (7.4.0-1ubuntu1~18.04.1) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../10-libcc1-0_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking libcc1-0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../11-libitm1_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking libitm1:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../12-libatomic1_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking libatomic1:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libasan4:amd64.
+Preparing to unpack .../13-libasan4_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking libasan4:amd64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../14-liblsan0_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking liblsan0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../15-libtsan0_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking libtsan0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libubsan0:amd64.
+Preparing to unpack .../16-libubsan0_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking libubsan0:amd64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package libcilkrts5:amd64.
+Preparing to unpack .../17-libcilkrts5_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking libcilkrts5:amd64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package libmpx2:amd64.
+Preparing to unpack .../18-libmpx2_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking libmpx2:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../19-libquadmath0_8.4.0-1ubuntu1~18.04_amd64.deb ...
+Unpacking libquadmath0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Selecting previously unselected package libgcc-7-dev:amd64.
+Preparing to unpack .../20-libgcc-7-dev_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking libgcc-7-dev:amd64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package gcc-7.
+Preparing to unpack .../21-gcc-7_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking gcc-7 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../22-gcc_4%3a7.4.0-1ubuntu2.3_amd64.deb ...
+Unpacking gcc (4:7.4.0-1ubuntu2.3) ...
+Selecting previously unselected package libstdc++-7-dev:amd64.
+Preparing to unpack .../23-libstdc++-7-dev_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking libstdc++-7-dev:amd64 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package g++-7.
+Preparing to unpack .../24-g++-7_7.5.0-3ubuntu1~18.04_amd64.deb ...
+Unpacking g++-7 (7.5.0-3ubuntu1~18.04) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../25-g++_4%3a7.4.0-1ubuntu2.3_amd64.deb ...
+Unpacking g++ (4:7.4.0-1ubuntu2.3) ...
+Selecting previously unselected package make.
+Preparing to unpack .../26-make_4.1-9.1ubuntu1_amd64.deb ...
+Unpacking make (4.1-9.1ubuntu1) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../27-libdpkg-perl_1.19.0.5ubuntu2.3_all.deb ...
+Unpacking libdpkg-perl (1.19.0.5ubuntu2.3) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../28-dpkg-dev_1.19.0.5ubuntu2.3_all.deb ...
+Unpacking dpkg-dev (1.19.0.5ubuntu2.3) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../29-build-essential_12.4ubuntu1_amd64.deb ...
+Unpacking build-essential (12.4ubuntu1) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../30-libfakeroot_1.22-2ubuntu1_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.22-2ubuntu1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../31-fakeroot_1.22-2ubuntu1_amd64.deb ...
+Unpacking fakeroot (1.22-2ubuntu1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../32-libalgorithm-diff-perl_1.19.03-1_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.03-1) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../33-libalgorithm-diff-xs-perl_0.04-5_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-5) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../34-libalgorithm-merge-perl_0.08-3_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-3) ...
+Selecting previously unselected package libexpat1-dev:amd64.
+Preparing to unpack .../35-libexpat1-dev_2.2.5-3ubuntu0.2_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.2.5-3ubuntu0.2) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../36-libfile-fcntllock-perl_0.22-3build2_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.22-3build2) ...
+Selecting previously unselected package libpython2.7-dev:amd64.
+Preparing to unpack .../37-libpython2.7-dev_2.7.17-1~18.04ubuntu1.6_amd64.deb ...
+Unpacking libpython2.7-dev:amd64 (2.7.17-1~18.04ubuntu1.6) ...
+Selecting previously unselected package libpython-dev:amd64.
+Preparing to unpack .../38-libpython-dev_2.7.15~rc1-1_amd64.deb ...
+Unpacking libpython-dev:amd64 (2.7.15~rc1-1) ...
+Selecting previously unselected package libpython-all-dev:amd64.
+Preparing to unpack .../39-libpython-all-dev_2.7.15~rc1-1_amd64.deb ...
+Unpacking libpython-all-dev:amd64 (2.7.15~rc1-1) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../40-manpages-dev_4.15-1_all.deb ...
+Unpacking manpages-dev (4.15-1) ...
+Selecting previously unselected package python-all.
+Preparing to unpack .../41-python-all_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-all (2.7.15~rc1-1) ...
+Selecting previously unselected package python2.7-dev.
+Preparing to unpack .../42-python2.7-dev_2.7.17-1~18.04ubuntu1.6_amd64.deb ...
+Unpacking python2.7-dev (2.7.17-1~18.04ubuntu1.6) ...
+Selecting previously unselected package python-dev.
+Preparing to unpack .../43-python-dev_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-dev (2.7.15~rc1-1) ...
+Selecting previously unselected package python-all-dev.
+Preparing to unpack .../44-python-all-dev_2.7.15~rc1-1_amd64.deb ...
+Unpacking python-all-dev (2.7.15~rc1-1) ...
+Selecting previously unselected package python-asn1crypto.
+Preparing to unpack .../45-python-asn1crypto_0.24.0-1_all.deb ...
+Unpacking python-asn1crypto (0.24.0-1) ...
+Selecting previously unselected package python-cffi-backend.
+Preparing to unpack .../46-python-cffi-backend_1.11.5-1_amd64.deb ...
+Unpacking python-cffi-backend (1.11.5-1) ...
+Selecting previously unselected package python-crypto.
+Preparing to unpack .../47-python-crypto_2.6.1-8ubuntu2_amd64.deb ...
+Unpacking python-crypto (2.6.1-8ubuntu2) ...
+Selecting previously unselected package python-enum34.
+Preparing to unpack .../48-python-enum34_1.1.6-2_all.deb ...
+Unpacking python-enum34 (1.1.6-2) ...
+Selecting previously unselected package python-idna.
+Preparing to unpack .../49-python-idna_2.6-1_all.deb ...
+Unpacking python-idna (2.6-1) ...
+Selecting previously unselected package python-ipaddress.
+Preparing to unpack .../50-python-ipaddress_1.0.17-1_all.deb ...
+Unpacking python-ipaddress (1.0.17-1) ...
+Selecting previously unselected package python-six.
+Preparing to unpack .../51-python-six_1.11.0-2_all.deb ...
+Unpacking python-six (1.11.0-2) ...
+Selecting previously unselected package python-cryptography.
+Preparing to unpack .../52-python-cryptography_2.1.4-1ubuntu1.4_amd64.deb ...
+Unpacking python-cryptography (2.1.4-1ubuntu1.4) ...
+Selecting previously unselected package python-dbus.
+Preparing to unpack .../53-python-dbus_1.2.6-1_amd64.deb ...
+Unpacking python-dbus (1.2.6-1) ...
+Selecting previously unselected package python-gi.
+Preparing to unpack .../54-python-gi_3.26.1-2ubuntu1_amd64.deb ...
+Unpacking python-gi (3.26.1-2ubuntu1) ...
+Selecting previously unselected package python-secretstorage.
+Preparing to unpack .../55-python-secretstorage_2.3.1-2_all.deb ...
+Unpacking python-secretstorage (2.3.1-2) ...
+Selecting previously unselected package python-keyring.
+Preparing to unpack .../56-python-keyring_10.6.0-1_all.deb ...
+Unpacking python-keyring (10.6.0-1) ...
+Selecting previously unselected package python-keyrings.alt.
+Preparing to unpack .../57-python-keyrings.alt_3.0-1_all.deb ...
+Unpacking python-keyrings.alt (3.0-1) ...
+Selecting previously unselected package python-pip.
+Preparing to unpack .../58-python-pip_9.0.1-2.3~ubuntu1.18.04.5_all.deb ...
+Unpacking python-pip (9.0.1-2.3~ubuntu1.18.04.5) ...
+Selecting previously unselected package python-pkg-resources.
+Preparing to unpack .../59-python-pkg-resources_39.0.1-2_all.deb ...
+Unpacking python-pkg-resources (39.0.1-2) ...
+Selecting previously unselected package python-setuptools.
+Preparing to unpack .../60-python-setuptools_39.0.1-2_all.deb ...
+Unpacking python-setuptools (39.0.1-2) ...
+Selecting previously unselected package python-wheel.
+Preparing to unpack .../61-python-wheel_0.30.0-0.2_all.deb ...
+Unpacking python-wheel (0.30.0-0.2) ...
+Selecting previously unselected package python-xdg.
+Preparing to unpack .../62-python-xdg_0.25-4ubuntu1.1_all.deb ...
+Unpacking python-xdg (0.25-4ubuntu1.1) ...
+Setting up libquadmath0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up python-idna (2.6-1) ...
+Setting up libatomic1:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up libexpat1:amd64 (2.2.5-3ubuntu0.2) ...
+Setting up libcc1-0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up python-asn1crypto (0.24.0-1) ...
+Setting up make (4.1-9.1ubuntu1) ...
+Setting up python-crypto (2.6.1-8ubuntu2) ...
+Setting up libtsan0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up python-wheel (0.30.0-0.2) ...
+Setting up linux-libc-dev:amd64 (4.15.0-163.171) ...
+Setting up libdpkg-perl (1.19.0.5ubuntu2.3) ...
+Setting up python-pkg-resources (39.0.1-2) ...
+Setting up liblsan0:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up gcc-7-base:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up binutils-common:amd64 (2.30-21ubuntu1~18.04.7) ...
+Setting up libfile-fcntllock-perl (0.22-3build2) ...
+Setting up python-cffi-backend (1.11.5-1) ...
+Setting up libmpx2:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up python-gi (3.26.1-2ubuntu1) ...
+Setting up python-six (1.11.0-2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libfakeroot:amd64 (1.22-2ubuntu1) ...
+Setting up python-enum34 (1.1.6-2) ...
+Setting up libalgorithm-diff-perl (1.19.03-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up libc-dev-bin (2.27-3ubuntu1.4) ...
+Setting up python-dbus (1.2.6-1) ...
+Setting up python-ipaddress (1.0.17-1) ...
+Setting up manpages-dev (4.15-1) ...
+Setting up python-pip (9.0.1-2.3~ubuntu1.18.04.5) ...
+Setting up libc6-dev:amd64 (2.27-3ubuntu1.4) ...
+Setting up python-all (2.7.15~rc1-1) ...
+Setting up libitm1:amd64 (8.4.0-1ubuntu1~18.04) ...
+Setting up python-xdg (0.25-4ubuntu1.1) ...
+Setting up python-setuptools (39.0.1-2) ...
+Setting up libasan4:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libbinutils:amd64 (2.30-21ubuntu1~18.04.7) ...
+Setting up libcilkrts5:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libubsan0:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up fakeroot (1.22-2ubuntu1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up python-keyrings.alt (3.0-1) ...
+Setting up libgcc-7-dev:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up cpp-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up libstdc++-7-dev:amd64 (7.5.0-3ubuntu1~18.04) ...
+Setting up libalgorithm-merge-perl (0.08-3) ...
+Setting up libalgorithm-diff-xs-perl (0.04-5) ...
+Setting up python-cryptography (2.1.4-1ubuntu1.4) ...
+Setting up libexpat1-dev:amd64 (2.2.5-3ubuntu0.2) ...
+Setting up libpython2.7-dev:amd64 (2.7.17-1~18.04ubuntu1.6) ...
+Setting up python2.7-dev (2.7.17-1~18.04ubuntu1.6) ...
+Setting up binutils-x86-64-linux-gnu (2.30-21ubuntu1~18.04.7) ...
+Setting up python-secretstorage (2.3.1-2) ...
+Setting up libpython-dev:amd64 (2.7.15~rc1-1) ...
+Setting up python-keyring (10.6.0-1) ...
+Setting up python-dev (2.7.15~rc1-1) ...
+Setting up libpython-all-dev:amd64 (2.7.15~rc1-1) ...
+Setting up python-all-dev (2.7.15~rc1-1) ...
+Setting up binutils (2.30-21ubuntu1~18.04.7) ...
+Setting up gcc-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up g++-7 (7.5.0-3ubuntu1~18.04) ...
+Setting up gcc (4:7.4.0-1ubuntu2.3) ...
+Setting up dpkg-dev (1.19.0.5ubuntu2.3) ...
+Setting up g++ (4:7.4.0-1ubuntu2.3) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (12.4ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python2 -m pip install giza
+Collecting giza
+  Using cached https://files.pythonhosted.org/packages/35/2e/dcf5b1c068ada0cd2919c65bf2c24028fee2ba790416df8908697525fa28/giza-0.5.18.tar.gz
+Collecting argh (from giza)
+  Using cached https://files.pythonhosted.org/packages/06/1c/e667a7126f0b84aaa1c56844337bf0ac12445d1beb9c8a6199a7314944bf/argh-0.26.2-py2.py3-none-any.whl
+Collecting docutils (from giza)
+  Using cached https://files.pythonhosted.org/packages/8d/14/69b4bad34e3f250afe29a854da03acb6747711f3df06c359fa053fae4e76/docutils-0.18.1-py2.py3-none-any.whl
+Collecting fett (from giza)
+  Using cached https://files.pythonhosted.org/packages/a6/fb/d4f8e22ea58cfb4a86f617982f037d3fd057491b50d8f0fe81495c2f6f64/fett-0.3.2.tar.gz
+Collecting hieroglyph (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/7e/f14e6e87d13e729b8b17b065316076f2f3b17111e32dc95646dc5c6a3ab1/hieroglyph-2.1.0-py2.py3-none-any.whl
+Collecting jinja2 (from giza)
+  Downloading https://files.pythonhosted.org/packages/7e/c2/1eece8c95ddbc9b1aeb64f5783a9e07a286de42191b7204d67b7496ddf35/Jinja2-2.11.3-py2.py3-none-any.whl (125kB)
+    100% |████████████████████████████████| 133kB 562kB/s
+Collecting jira (from giza)
+  Downloading https://files.pythonhosted.org/packages/cb/c2/4203b6cad72d115b0ad62ae7028567b538c8933745f665d0eee5082baf67/jira-2.0.0-py2.py3-none-any.whl (57kB)
+    100% |████████████████████████████████| 61kB 580kB/s
+Collecting jsx-lexer (from giza)
+  Using cached https://files.pythonhosted.org/packages/39/1c/52077c2225d822118907fe3291958c4b9dd57c3beb243e19312893acccc1/jsx_lexer-1.0.0-py2.py3-none-any.whl
+Collecting onetimepass (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/b2/cb6832704aaf11ed0e471910a8da360129e2c23398d2ea3a71961a2f5746/onetimepass-1.0.1.tar.gz
+Collecting polib (from giza)
+  Using cached https://files.pythonhosted.org/packages/9e/ee/54d6c558d4319a26145658584acb373d50ba0968eb9c19fedfb42458314a/polib-1.1.1-py2.py3-none-any.whl
+Collecting pyyaml (from giza)
+  Downloading https://files.pythonhosted.org/packages/ba/d4/3cf562876e0cda0405e65d351b835077ab13990e5b92912ef2bf1a2280e0/PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl (574kB)
+    100% |████████████████████████████████| 583kB 498kB/s
+Collecting rstcloth<0.3,>=0.2.5 (from giza)
+  Using cached https://files.pythonhosted.org/packages/bb/56/1584963d07c8b913d25c7ce00a05f2ad2fb4ac05fc0598fec3490efa686c/rstcloth-0.2.6.tar.gz
+Collecting sphinx (from giza)
+  Downloading https://files.pythonhosted.org/packages/c7/da/e1b65da61267aeb92a76b6b6752430bcc076d98b723687929eb3d2e0d128/Sphinx-1.8.6-py2.py3-none-any.whl (3.1MB)
+    100% |████████████████████████████████| 3.1MB 218kB/s
+Collecting sphinx-intl (from giza)
+  Downloading https://files.pythonhosted.org/packages/a0/4c/fab5e1eeac6c0b534db888a8ce6f60fc0a88e798170f0448b0c7db7da16d/sphinx_intl-1.0.0-py2.py3-none-any.whl
+Collecting sphinxcontrib-httpdomain (from giza)
+  Downloading https://files.pythonhosted.org/packages/3c/68/bfec793c4284c32171c6e22158c18bd5732b0d7c4f757c474f6fabaefcd3/sphinxcontrib_httpdomain-1.8.0-py2.py3-none-any.whl
+Collecting wand (from giza)
+  Downloading https://files.pythonhosted.org/packages/25/1c/55c69811efdfc7623b70168f25f9d22b593047ba0bd4b99c066a2a5a2c12/Wand-0.6.7-py2.py3-none-any.whl (139kB)
+    100% |████████████████████████████████| 143kB 657kB/s
+Collecting typing (from fett->giza)
+  Downloading https://files.pythonhosted.org/packages/0b/cb/da856e81731833b94da70a08712f658416266a5fb2a9d9e426c8061becef/typing-3.10.0.0-py2-none-any.whl
+Requirement already satisfied: setuptools in /usr/lib/python2.7/dist-packages (from hieroglyph->giza)
+Collecting MarkupSafe>=0.23 (from jinja2->giza)
+  Downloading https://files.pythonhosted.org/packages/fb/40/f3adb7cf24a8012813c5edb20329eb22d5d8e2a0ecf73d21d6b85865da11/MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting oauthlib[signedtoken]>=1.0.0 (from jira->giza)
+  Downloading https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl (147kB)
+    100% |████████████████████████████████| 153kB 527kB/s
+Collecting requests>=2.10.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/92/96/144f70b972a9c0eabbd4391ef93ccd49d0f2747f4f6a2a2738e99e5adc65/requests-2.26.0-py2.py3-none-any.whl
+Collecting requests-toolbelt (from jira->giza)
+  Downloading https://files.pythonhosted.org/packages/60/ef/7681134338fc097acef8d9b2f8abe0458e4d87559c689a8c306d0957ece5/requests_toolbelt-0.9.1-py2.py3-none-any.whl (54kB)
+    100% |████████████████████████████████| 61kB 384kB/s
+Collecting defusedxml (from jira->giza)
+  Downloading https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl
+Requirement already satisfied: six>=1.10.0 in /usr/lib/python2.7/dist-packages (from jira->giza)
+Collecting requests-oauthlib>=0.6.1 (from jira->giza)
+  Downloading https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl
+Collecting pbr>=3.0.0 (from jira->giza)
+  Downloading https://files.pythonhosted.org/packages/73/c3/d45171501210b0305f4c93fafe50950f0c2228e87034ceb51744bd03ff08/pbr-5.8.0-py2.py3-none-any.whl (112kB)
+    100% |████████████████████████████████| 122kB 424kB/s
+Collecting Pygments>=2.7 (from jsx-lexer->giza)
+  Could not find a version that satisfies the requirement Pygments>=2.7 (from jsx-lexer->giza) (from versions: 0.5, 0.5.1, 0.6, 0.7, 0.7.1, 0.8, 0.8.1, 0.9, 0.10, 0.11, 0.11.1, 1.0, 1.1, 1.1.1, 1.2, 1.2.1, 1.2.2, 1.3, 1.3.1, 1.4, 1.5, 1.6rc1, 1.6, 2.0rc1, 2.0, 2.0.1, 2.0.2, 2.1, 2.1.1, 2.1.2, 2.1.3, 2.2.0, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.4.2, 2.5.1, 2.5.2)
+No matching distribution found for Pygments>=2.7 (from jsx-lexer->giza)
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python2 -m pip install giza
+Collecting giza
+  Using cached https://files.pythonhosted.org/packages/35/2e/dcf5b1c068ada0cd2919c65bf2c24028fee2ba790416df8908697525fa28/giza-0.5.18.tar.gz
+Collecting argh (from giza)
+  Using cached https://files.pythonhosted.org/packages/06/1c/e667a7126f0b84aaa1c56844337bf0ac12445d1beb9c8a6199a7314944bf/argh-0.26.2-py2.py3-none-any.whl
+Collecting docutils (from giza)
+  Using cached https://files.pythonhosted.org/packages/8d/14/69b4bad34e3f250afe29a854da03acb6747711f3df06c359fa053fae4e76/docutils-0.18.1-py2.py3-none-any.whl
+Collecting fett (from giza)
+  Using cached https://files.pythonhosted.org/packages/a6/fb/d4f8e22ea58cfb4a86f617982f037d3fd057491b50d8f0fe81495c2f6f64/fett-0.3.2.tar.gz
+Collecting hieroglyph (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/7e/f14e6e87d13e729b8b17b065316076f2f3b17111e32dc95646dc5c6a3ab1/hieroglyph-2.1.0-py2.py3-none-any.whl
+Collecting jinja2 (from giza)
+  Using cached https://files.pythonhosted.org/packages/7e/c2/1eece8c95ddbc9b1aeb64f5783a9e07a286de42191b7204d67b7496ddf35/Jinja2-2.11.3-py2.py3-none-any.whl
+Collecting jira (from giza)
+  Using cached https://files.pythonhosted.org/packages/cb/c2/4203b6cad72d115b0ad62ae7028567b538c8933745f665d0eee5082baf67/jira-2.0.0-py2.py3-none-any.whl
+Collecting jsx-lexer (from giza)
+  Using cached https://files.pythonhosted.org/packages/39/1c/52077c2225d822118907fe3291958c4b9dd57c3beb243e19312893acccc1/jsx_lexer-1.0.0-py2.py3-none-any.whl
+Collecting onetimepass (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/b2/cb6832704aaf11ed0e471910a8da360129e2c23398d2ea3a71961a2f5746/onetimepass-1.0.1.tar.gz
+Collecting polib (from giza)
+  Using cached https://files.pythonhosted.org/packages/9e/ee/54d6c558d4319a26145658584acb373d50ba0968eb9c19fedfb42458314a/polib-1.1.1-py2.py3-none-any.whl
+Collecting pyyaml (from giza)
+  Using cached https://files.pythonhosted.org/packages/ba/d4/3cf562876e0cda0405e65d351b835077ab13990e5b92912ef2bf1a2280e0/PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting rstcloth<0.3,>=0.2.5 (from giza)
+  Using cached https://files.pythonhosted.org/packages/bb/56/1584963d07c8b913d25c7ce00a05f2ad2fb4ac05fc0598fec3490efa686c/rstcloth-0.2.6.tar.gz
+Collecting sphinx (from giza)
+  Using cached https://files.pythonhosted.org/packages/c7/da/e1b65da61267aeb92a76b6b6752430bcc076d98b723687929eb3d2e0d128/Sphinx-1.8.6-py2.py3-none-any.whl
+Collecting sphinx-intl (from giza)
+  Using cached https://files.pythonhosted.org/packages/a0/4c/fab5e1eeac6c0b534db888a8ce6f60fc0a88e798170f0448b0c7db7da16d/sphinx_intl-1.0.0-py2.py3-none-any.whl
+Collecting sphinxcontrib-httpdomain (from giza)
+  Using cached https://files.pythonhosted.org/packages/3c/68/bfec793c4284c32171c6e22158c18bd5732b0d7c4f757c474f6fabaefcd3/sphinxcontrib_httpdomain-1.8.0-py2.py3-none-any.whl
+Collecting wand (from giza)
+  Using cached https://files.pythonhosted.org/packages/25/1c/55c69811efdfc7623b70168f25f9d22b593047ba0bd4b99c066a2a5a2c12/Wand-0.6.7-py2.py3-none-any.whl
+Collecting typing (from fett->giza)
+  Using cached https://files.pythonhosted.org/packages/0b/cb/da856e81731833b94da70a08712f658416266a5fb2a9d9e426c8061becef/typing-3.10.0.0-py2-none-any.whl
+Requirement already satisfied: setuptools in /usr/lib/python2.7/dist-packages (from hieroglyph->giza)
+Collecting MarkupSafe>=0.23 (from jinja2->giza)
+  Using cached https://files.pythonhosted.org/packages/fb/40/f3adb7cf24a8012813c5edb20329eb22d5d8e2a0ecf73d21d6b85865da11/MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting oauthlib[signedtoken]>=1.0.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl
+Collecting requests>=2.10.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/92/96/144f70b972a9c0eabbd4391ef93ccd49d0f2747f4f6a2a2738e99e5adc65/requests-2.26.0-py2.py3-none-any.whl
+Collecting requests-toolbelt (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/60/ef/7681134338fc097acef8d9b2f8abe0458e4d87559c689a8c306d0957ece5/requests_toolbelt-0.9.1-py2.py3-none-any.whl
+Collecting defusedxml (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl
+Requirement already satisfied: six>=1.10.0 in /usr/lib/python2.7/dist-packages (from jira->giza)
+Collecting requests-oauthlib>=0.6.1 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl
+Collecting pbr>=3.0.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/73/c3/d45171501210b0305f4c93fafe50950f0c2228e87034ceb51744bd03ff08/pbr-5.8.0-py2.py3-none-any.whl
+Collecting Pygments>=2.7 (from jsx-lexer->giza)
+  Could not find a version that satisfies the requirement Pygments>=2.7 (from jsx-lexer->giza) (from versions: 0.5, 0.5.1, 0.6, 0.7, 0.7.1, 0.8, 0.8.1, 0.9, 0.10, 0.11, 0.11.1, 1.0, 1.1, 1.1.1, 1.2, 1.2.1, 1.2.2, 1.3, 1.3.1, 1.4, 1.5, 1.6rc1, 1.6, 2.0rc1, 2.0, 2.0.1, 2.0.2, 2.1, 2.1.1, 2.1.2, 2.1.3, 2.2.0, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.4.2, 2.5.1, 2.5.2)
+No matching distribution found for Pygments>=2.7 (from jsx-lexer->giza)
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work#  pip install giza
+Collecting giza
+  Using cached https://files.pythonhosted.org/packages/35/2e/dcf5b1c068ada0cd2919c65bf2c24028fee2ba790416df8908697525fa28/giza-0.5.18.tar.gz
+Collecting argh (from giza)
+  Using cached https://files.pythonhosted.org/packages/06/1c/e667a7126f0b84aaa1c56844337bf0ac12445d1beb9c8a6199a7314944bf/argh-0.26.2-py2.py3-none-any.whl
+Collecting docutils (from giza)
+  Using cached https://files.pythonhosted.org/packages/8d/14/69b4bad34e3f250afe29a854da03acb6747711f3df06c359fa053fae4e76/docutils-0.18.1-py2.py3-none-any.whl
+Collecting fett (from giza)
+  Using cached https://files.pythonhosted.org/packages/a6/fb/d4f8e22ea58cfb4a86f617982f037d3fd057491b50d8f0fe81495c2f6f64/fett-0.3.2.tar.gz
+Collecting hieroglyph (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/7e/f14e6e87d13e729b8b17b065316076f2f3b17111e32dc95646dc5c6a3ab1/hieroglyph-2.1.0-py2.py3-none-any.whl
+Collecting jinja2 (from giza)
+  Using cached https://files.pythonhosted.org/packages/7e/c2/1eece8c95ddbc9b1aeb64f5783a9e07a286de42191b7204d67b7496ddf35/Jinja2-2.11.3-py2.py3-none-any.whl
+Collecting jira (from giza)
+  Using cached https://files.pythonhosted.org/packages/cb/c2/4203b6cad72d115b0ad62ae7028567b538c8933745f665d0eee5082baf67/jira-2.0.0-py2.py3-none-any.whl
+Collecting jsx-lexer (from giza)
+  Using cached https://files.pythonhosted.org/packages/39/1c/52077c2225d822118907fe3291958c4b9dd57c3beb243e19312893acccc1/jsx_lexer-1.0.0-py2.py3-none-any.whl
+Collecting onetimepass (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/b2/cb6832704aaf11ed0e471910a8da360129e2c23398d2ea3a71961a2f5746/onetimepass-1.0.1.tar.gz
+Collecting polib (from giza)
+  Using cached https://files.pythonhosted.org/packages/9e/ee/54d6c558d4319a26145658584acb373d50ba0968eb9c19fedfb42458314a/polib-1.1.1-py2.py3-none-any.whl
+Collecting pyyaml (from giza)
+  Using cached https://files.pythonhosted.org/packages/ba/d4/3cf562876e0cda0405e65d351b835077ab13990e5b92912ef2bf1a2280e0/PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting rstcloth<0.3,>=0.2.5 (from giza)
+  Using cached https://files.pythonhosted.org/packages/bb/56/1584963d07c8b913d25c7ce00a05f2ad2fb4ac05fc0598fec3490efa686c/rstcloth-0.2.6.tar.gz
+Collecting sphinx (from giza)
+  Using cached https://files.pythonhosted.org/packages/c7/da/e1b65da61267aeb92a76b6b6752430bcc076d98b723687929eb3d2e0d128/Sphinx-1.8.6-py2.py3-none-any.whl
+Collecting sphinx-intl (from giza)
+  Using cached https://files.pythonhosted.org/packages/a0/4c/fab5e1eeac6c0b534db888a8ce6f60fc0a88e798170f0448b0c7db7da16d/sphinx_intl-1.0.0-py2.py3-none-any.whl
+Collecting sphinxcontrib-httpdomain (from giza)
+  Using cached https://files.pythonhosted.org/packages/3c/68/bfec793c4284c32171c6e22158c18bd5732b0d7c4f757c474f6fabaefcd3/sphinxcontrib_httpdomain-1.8.0-py2.py3-none-any.whl
+Collecting wand (from giza)
+  Using cached https://files.pythonhosted.org/packages/25/1c/55c69811efdfc7623b70168f25f9d22b593047ba0bd4b99c066a2a5a2c12/Wand-0.6.7-py2.py3-none-any.whl
+Collecting typing (from fett->giza)
+  Using cached https://files.pythonhosted.org/packages/0b/cb/da856e81731833b94da70a08712f658416266a5fb2a9d9e426c8061becef/typing-3.10.0.0-py2-none-any.whl
+Requirement already satisfied: setuptools in /usr/lib/python2.7/dist-packages (from hieroglyph->giza)
+Collecting MarkupSafe>=0.23 (from jinja2->giza)
+  Using cached https://files.pythonhosted.org/packages/fb/40/f3adb7cf24a8012813c5edb20329eb22d5d8e2a0ecf73d21d6b85865da11/MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl
+Collecting oauthlib[signedtoken]>=1.0.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl
+Collecting requests>=2.10.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/92/96/144f70b972a9c0eabbd4391ef93ccd49d0f2747f4f6a2a2738e99e5adc65/requests-2.26.0-py2.py3-none-any.whl
+Collecting requests-toolbelt (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/60/ef/7681134338fc097acef8d9b2f8abe0458e4d87559c689a8c306d0957ece5/requests_toolbelt-0.9.1-py2.py3-none-any.whl
+Collecting defusedxml (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl
+Requirement already satisfied: six>=1.10.0 in /usr/lib/python2.7/dist-packages (from jira->giza)
+Collecting requests-oauthlib>=0.6.1 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl
+Collecting pbr>=3.0.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/73/c3/d45171501210b0305f4c93fafe50950f0c2228e87034ceb51744bd03ff08/pbr-5.8.0-py2.py3-none-any.whl
+Collecting Pygments>=2.7 (from jsx-lexer->giza)
+  Could not find a version that satisfies the requirement Pygments>=2.7 (from jsx-lexer->giza) (from versions: 0.5, 0.5.1, 0.6, 0.7, 0.7.1, 0.8, 0.8.1, 0.9, 0.10, 0.11, 0.11.1, 1.0, 1.1, 1.1.1, 1.2, 1.2.1, 1.2.2, 1.3, 1.3.1, 1.4, 1.5, 1.6rc1, 1.6, 2.0rc1, 2.0, 2.0.1, 2.0.2, 2.1, 2.1.1, 2.1.2, 2.1.3, 2.2.0, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.4.2, 2.5.1, 2.5.2)
+No matching distribution found for Pygments>=2.7 (from jsx-lexer->giza)
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# pip install Pygments
+Collecting Pygments
+  Downloading https://files.pythonhosted.org/packages/be/39/32da3184734730c0e4d3fa3b2b5872104668ad6dc1b5a73d8e477e5fe967/Pygments-2.5.2-py2.py3-none-any.whl (896kB)
+    100% |████████████████████████████████| 901kB 973kB/s
+Installing collected packages: Pygments
+Successfully installed Pygments-2.5.2
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python3 install giza
+python3: can't open file 'install': [Errno 2] No such file or directory
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python3
+Python 3.6.9 (default, Jan 26 2021, 15:33:00)
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# python3 install giza
+python3: can't open file 'install': [Errno 2] No such file or directory
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# pip3 install giza
+
+Command 'pip3' not found, but can be installed with:
+
+apt install python3-pip
+
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# cd git clone https://github.com/mongodb/docs.git
+-bash: cd: too many arguments
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# git clone https://github.com/mongodb/docs.git
+Cloning into 'docs'...
+remote: Enumerating objects: 190512, done.
+remote: Counting objects: 100% (4301/4301), done.
+remote: Compressing objects: 100% (1640/1640), done.
+remote: Total 190512 (delta 3168), reused 3355 (delta 2634), pack-reused 186211
+Receiving objects: 100% (190512/190512), 111.56 MiB | 5.09 MiB/s, done.
+Resolving deltas: 100% (148988/148988), done.
+Checking out files: 100% (2951/2951), done.
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work# cd docs
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# python3 -m venv p3venv
+root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# source p3venv/bin/activate
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# apt install python3-pip
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libatfs1
+Use 'apt autoremove' to remove it.
+The following additional packages will be installed:
+  dh-python libpython3-dev libpython3.6-dev python3-crypto python3-dev python3-keyring python3-keyrings.alt python3-secretstorage python3-setuptools python3-wheel python3-xdg python3.6-dev
+Suggested packages:
+  python-crypto-doc gnome-keyring libkf5wallet-bin gir1.2-gnomekeyring-1.0 python-secretstorage-doc python-setuptools-doc
+The following NEW packages will be installed:
+  dh-python libpython3-dev libpython3.6-dev python3-crypto python3-dev python3-keyring python3-keyrings.alt python3-pip python3-secretstorage python3-setuptools python3-wheel python3-xdg python3.6-dev
+0 upgraded, 13 newly installed, 0 to remove and 229 not upgraded.
+Need to get 46.2 MB of archives.
+After this operation, 81.1 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 dh-python all 3.20180325ubuntu2 [89.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-dev amd64 3.6.9-1~18.04ubuntu1.4 [44.9 MB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3-dev amd64 3.6.7-1~18.04 [7328 B]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-crypto amd64 2.6.1-8ubuntu2 [244 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6-dev amd64 3.6.9-1~18.04ubuntu1.4 [508 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-dev amd64 3.6.7-1~18.04 [1288 B]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-secretstorage all 2.3.1-2 [12.1 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-keyring all 10.6.0-1 [26.7 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-keyrings.alt all 3.0-1 [16.6 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 python3-pip all 9.0.1-2.3~ubuntu1.18.04.5 [114 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-setuptools all 39.0.1-2 [248 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python3-wheel all 0.30.0-0.2 [36.5 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-xdg all 0.25-4ubuntu1.1 [31.3 kB]
+Fetched 46.2 MB in 2min 0s (384 kB/s)
+Selecting previously unselected package dh-python.
+(Reading database ... 60624 files and directories currently installed.)
+Preparing to unpack .../00-dh-python_3.20180325ubuntu2_all.deb ...
+Unpacking dh-python (3.20180325ubuntu2) ...
+Selecting previously unselected package libpython3.6-dev:amd64.
+Preparing to unpack .../01-libpython3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb ...
+Unpacking libpython3.6-dev:amd64 (3.6.9-1~18.04ubuntu1.4) ...
+Selecting previously unselected package libpython3-dev:amd64.
+Preparing to unpack .../02-libpython3-dev_3.6.7-1~18.04_amd64.deb ...
+Unpacking libpython3-dev:amd64 (3.6.7-1~18.04) ...
+Selecting previously unselected package python3-crypto.
+Preparing to unpack .../03-python3-crypto_2.6.1-8ubuntu2_amd64.deb ...
+Unpacking python3-crypto (2.6.1-8ubuntu2) ...
+Selecting previously unselected package python3.6-dev.
+Preparing to unpack .../04-python3.6-dev_3.6.9-1~18.04ubuntu1.4_amd64.deb ...
+Unpacking python3.6-dev (3.6.9-1~18.04ubuntu1.4) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../05-python3-dev_3.6.7-1~18.04_amd64.deb ...
+Unpacking python3-dev (3.6.7-1~18.04) ...
+Selecting previously unselected package python3-secretstorage.
+Preparing to unpack .../06-python3-secretstorage_2.3.1-2_all.deb ...
+Unpacking python3-secretstorage (2.3.1-2) ...
+Selecting previously unselected package python3-keyring.
+Preparing to unpack .../07-python3-keyring_10.6.0-1_all.deb ...
+Unpacking python3-keyring (10.6.0-1) ...
+Selecting previously unselected package python3-keyrings.alt.
+Preparing to unpack .../08-python3-keyrings.alt_3.0-1_all.deb ...
+Unpacking python3-keyrings.alt (3.0-1) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../09-python3-pip_9.0.1-2.3~ubuntu1.18.04.5_all.deb ...
+Unpacking python3-pip (9.0.1-2.3~ubuntu1.18.04.5) ...
+Selecting previously unselected package python3-setuptools.
+Preparing to unpack .../10-python3-setuptools_39.0.1-2_all.deb ...
+Unpacking python3-setuptools (39.0.1-2) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../11-python3-wheel_0.30.0-0.2_all.deb ...
+Unpacking python3-wheel (0.30.0-0.2) ...
+Selecting previously unselected package python3-xdg.
+Preparing to unpack .../12-python3-xdg_0.25-4ubuntu1.1_all.deb ...
+Unpacking python3-xdg (0.25-4ubuntu1.1) ...
+Setting up python3-crypto (2.6.1-8ubuntu2) ...
+Setting up python3-xdg (0.25-4ubuntu1.1) ...
+Setting up python3-keyrings.alt (3.0-1) ...
+Setting up python3-wheel (0.30.0-0.2) ...
+Setting up libpython3.6-dev:amd64 (3.6.9-1~18.04ubuntu1.4) ...
+Setting up python3-pip (9.0.1-2.3~ubuntu1.18.04.5) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up python3-setuptools (39.0.1-2) ...
+Setting up python3.6-dev (3.6.9-1~18.04ubuntu1.4) ...
+Setting up python3-secretstorage (2.3.1-2) ...
+Setting up dh-python (3.20180325ubuntu2) ...
+Setting up libpython3-dev:amd64 (3.6.7-1~18.04) ...
+Setting up python3-keyring (10.6.0-1) ...
+Setting up python3-dev (3.6.7-1~18.04) ...
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 install giza
+Collecting giza
+  Using cached https://files.pythonhosted.org/packages/35/2e/dcf5b1c068ada0cd2919c65bf2c24028fee2ba790416df8908697525fa28/giza-0.5.18.tar.gz
+Collecting argh (from giza)
+  Using cached https://files.pythonhosted.org/packages/06/1c/e667a7126f0b84aaa1c56844337bf0ac12445d1beb9c8a6199a7314944bf/argh-0.26.2-py2.py3-none-any.whl
+Collecting docutils (from giza)
+  Using cached https://files.pythonhosted.org/packages/8d/14/69b4bad34e3f250afe29a854da03acb6747711f3df06c359fa053fae4e76/docutils-0.18.1-py2.py3-none-any.whl
+Collecting fett (from giza)
+  Using cached https://files.pythonhosted.org/packages/a6/fb/d4f8e22ea58cfb4a86f617982f037d3fd057491b50d8f0fe81495c2f6f64/fett-0.3.2.tar.gz
+Collecting hieroglyph (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/7e/f14e6e87d13e729b8b17b065316076f2f3b17111e32dc95646dc5c6a3ab1/hieroglyph-2.1.0-py2.py3-none-any.whl
+Collecting jinja2 (from giza)
+  Using cached https://files.pythonhosted.org/packages/20/9a/e5d9ec41927401e41aea8af6d16e78b5e612bca4699d417f646a9610a076/Jinja2-3.0.3-py3-none-any.whl
+Collecting jira (from giza)
+  Using cached https://files.pythonhosted.org/packages/fe/84/eeeb4523d2ff0b5ba33a9b9bc5721a96406e6a94bc0398b24b3aa7bc5a56/jira-3.1.1-py3-none-any.whl
+Collecting jsx-lexer (from giza)
+  Using cached https://files.pythonhosted.org/packages/39/1c/52077c2225d822118907fe3291958c4b9dd57c3beb243e19312893acccc1/jsx_lexer-1.0.0-py2.py3-none-any.whl
+Collecting onetimepass (from giza)
+  Using cached https://files.pythonhosted.org/packages/aa/b2/cb6832704aaf11ed0e471910a8da360129e2c23398d2ea3a71961a2f5746/onetimepass-1.0.1.tar.gz
+Collecting polib (from giza)
+  Using cached https://files.pythonhosted.org/packages/9e/ee/54d6c558d4319a26145658584acb373d50ba0968eb9c19fedfb42458314a/polib-1.1.1-py2.py3-none-any.whl
+Collecting pyyaml (from giza)
+  Using cached https://files.pythonhosted.org/packages/b3/85/79b9e5b4e8d3c0ac657f4e8617713cca8408f6cdc65d2ee6554217cedff1/PyYAML-6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl
+Collecting rstcloth<0.3,>=0.2.5 (from giza)
+  Using cached https://files.pythonhosted.org/packages/bb/56/1584963d07c8b913d25c7ce00a05f2ad2fb4ac05fc0598fec3490efa686c/rstcloth-0.2.6.tar.gz
+Collecting sphinx (from giza)
+  Using cached https://files.pythonhosted.org/packages/3a/05/8473b0d9b8e502b0d64c2383a60643525f691a98479707c385915cffb225/Sphinx-4.3.1-py3-none-any.whl
+Collecting sphinx-intl (from giza)
+  Downloading https://files.pythonhosted.org/packages/85/4b/4589077b71336e84d7ca06e717929437f3185f75ec5dece0a9926cf91c56/sphinx-intl-2.0.1.tar.gz
+Collecting sphinxcontrib-httpdomain (from giza)
+  Using cached https://files.pythonhosted.org/packages/3c/68/bfec793c4284c32171c6e22158c18bd5732b0d7c4f757c474f6fabaefcd3/sphinxcontrib_httpdomain-1.8.0-py2.py3-none-any.whl
+Collecting wand (from giza)
+  Using cached https://files.pythonhosted.org/packages/25/1c/55c69811efdfc7623b70168f25f9d22b593047ba0bd4b99c066a2a5a2c12/Wand-0.6.7-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in ./p3venv/lib/python3.6/site-packages (from hieroglyph->giza)
+Collecting MarkupSafe>=2.0 (from jinja2->giza)
+  Using cached https://files.pythonhosted.org/packages/fc/d6/57f9a97e56447a1e340f8574836d3b636e2c14de304943836bd645fa9c7e/MarkupSafe-2.0.1-cp36-cp36m-manylinux1_x86_64.whl
+Collecting requests-toolbelt (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/60/ef/7681134338fc097acef8d9b2f8abe0458e4d87559c689a8c306d0957ece5/requests_toolbelt-0.9.1-py2.py3-none-any.whl
+Collecting requests-oauthlib>=1.1.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl
+Collecting requests>=2.10.0 (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/92/96/144f70b972a9c0eabbd4391ef93ccd49d0f2747f4f6a2a2738e99e5adc65/requests-2.26.0-py2.py3-none-any.whl
+Collecting keyring (from jira->giza)
+  Downloading https://files.pythonhosted.org/packages/ce/86/137d2460ceb266bf5233d81d23884bca03aa941060ec63622bd745fe09aa/keyring-23.4.0-py3-none-any.whl
+Collecting defusedxml (from jira->giza)
+  Using cached https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl
+Collecting Pygments>=2.7 (from jsx-lexer->giza)
+  Using cached https://files.pythonhosted.org/packages/78/c8/8d9be2f72d8f465461f22b5f199c04f7ada933add4dae6e2468133c17471/Pygments-2.10.0-py3-none-any.whl
+Collecting six (from onetimepass->giza)
+  Downloading https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl
+Collecting alabaster<0.8,>=0.7 (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
+Collecting sphinxcontrib-devhelp (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/c5/09/5de5ed43a521387f18bdf5f5af31d099605c992fd25372b2b9b825ce48ee/sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl
+Collecting sphinxcontrib-serializinghtml>=1.1.5 (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/c6/77/5464ec50dd0f1c1037e3c93249b040c8fc8078fdda97530eeb02424b6eea/sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl
+Collecting sphinxcontrib-qthelp (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/2b/14/05f9206cf4e9cfca1afb5fd224c7cd434dcc3a433d6d9e4e0264d29c6cdb/sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl
+Collecting snowballstemmer>=1.1 (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/ed/dc/c02e01294f7265e63a7315fe086dd1df7dacb9f840a804da846b96d01b96/snowballstemmer-2.2.0-py2.py3-none-any.whl
+Collecting babel>=1.3 (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/aa/96/4ba93c5f40459dc850d25f9ba93f869a623e77aaecc7a9344e19c01942cf/Babel-2.9.1-py2.py3-none-any.whl
+Collecting imagesize (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/60/d6/5e803b17f4d42e085c365b44fda34deb0d8675a1a910635930b831c43f07/imagesize-1.3.0-py2.py3-none-any.whl
+Collecting packaging (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl
+Collecting sphinxcontrib-jsmath (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+Collecting sphinxcontrib-htmlhelp>=2.0.0 (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/63/40/c854ef09500e25f6432dcbad0f37df87fd7046d376272292d8654cc71c95/sphinxcontrib_htmlhelp-2.0.0-py2.py3-none-any.whl
+Collecting sphinxcontrib-applehelp (from sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/dc/47/86022665a9433d89a66f5911b558ddff69861766807ba685de2e324bd6ed/sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl
+Collecting click (from sphinx-intl->giza)
+  Downloading https://files.pythonhosted.org/packages/48/58/c8aa6a8e62cc75f39fee1092c45d6b6ba684122697d7ce7d53f64f98a129/click-8.0.3-py3-none-any.whl (97kB)
+    100% |████████████████████████████████| 102kB 3.0MB/s
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=1.1.0->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/e8/5d/9dd1c29e5a786525f6342f6c1d812ed2e37edc653ad297048c1668988053/oauthlib-3.1.1-py2.py3-none-any.whl (146kB)
+    100% |████████████████████████████████| 153kB 1.6MB/s
+Collecting charset-normalizer~=2.0.0; python_version >= "3" (from requests>=2.10.0->jira->giza)
+  Using cached https://files.pythonhosted.org/packages/47/84/b06f6729fac8108c5fa3e13cde19b0b3de66ba5538c325496dbe39f5ff8e/charset_normalizer-2.0.9-py3-none-any.whl
+Collecting urllib3<1.27,>=1.21.1 (from requests>=2.10.0->jira->giza)
+  Using cached https://files.pythonhosted.org/packages/af/f4/524415c0744552cce7d8bf3669af78e8a069514405ea4fcbd0cc44733744/urllib3-1.26.7-py2.py3-none-any.whl
+Collecting idna<4,>=2.5; python_version >= "3" (from requests>=2.10.0->jira->giza)
+  Using cached https://files.pythonhosted.org/packages/04/a2/d918dcd22354d8958fe113e1a3630137e0fc8b44859ade3063982eacd2a4/idna-3.3-py3-none-any.whl
+Collecting certifi>=2017.4.17 (from requests>=2.10.0->jira->giza)
+  Using cached https://files.pythonhosted.org/packages/37/45/946c02767aabb873146011e665728b680884cd8fe70dde973c640e45b775/certifi-2021.10.8-py2.py3-none-any.whl
+Collecting importlib-metadata>=3.6 (from keyring->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/c4/1f/e2238896149df09953efcc53bdcc7d23597d6c53e428c30e572eda5ec6eb/importlib_metadata-4.8.2-py3-none-any.whl
+Collecting jeepney>=0.4.2; sys_platform == "linux" (from keyring->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/14/b8/bb3e34d71472140f9bfdf5d77cd063e2cc964b72b1bb0b70fe3c1e7db932/jeepney-0.7.1-py3-none-any.whl (54kB)
+    100% |████████████████████████████████| 61kB 2.7MB/s
+Collecting SecretStorage>=3.2; sys_platform == "linux" (from keyring->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/d9/1e/29cd69fdac7391aa51510dfd42aa70b4e6a826c8cd019ee2a8ab9ec0777f/SecretStorage-3.3.1-py3-none-any.whl
+Collecting pytz>=2015.7 (from babel>=1.3->sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/d3/e3/d9f046b5d1c94a3aeab15f1f867aa414f8ee9d196fae6865f1d6a0ee1a0b/pytz-2021.3-py2.py3-none-any.whl
+Collecting pyparsing!=3.0.5,>=2.0.2 (from packaging->sphinx->giza)
+  Using cached https://files.pythonhosted.org/packages/a0/34/895006117f6fce0b4de045c87e154ee4a20c68ec0a4c9a36d900888fb6bc/pyparsing-3.0.6-py3-none-any.whl
+Collecting typing-extensions>=3.6.4; python_version < "3.8" (from importlib-metadata>=3.6->keyring->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/05/e4/baf0031e39cf545f0c9edd5b1a2ea12609b7fcba2d58e118b11753d68cf0/typing_extensions-4.0.1-py3-none-any.whl
+Collecting zipp>=0.5 (from importlib-metadata>=3.6->keyring->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl
+Collecting cryptography>=2.0 (from SecretStorage>=3.2; sys_platform == "linux"->keyring->jira->giza)
+  Downloading https://files.pythonhosted.org/packages/60/06/d9109aba62c0b42466195e5b9b30dded26621a675b73998218070d8cc637/cryptography-36.0.0.tar.gz (571kB)
+    100% |████████████████████████████████| 573kB 1.5MB/s
+    Complete output from command python setup.py egg_info:
+
+            =============================DEBUG ASSISTANCE==========================
+            If you are seeing an error here please try the following to
+            successfully install cryptography:
+
+            Upgrade to the latest pip and try again. This will fix errors for most
+            users. See: https://pip.pypa.io/en/stable/installing/#upgrading-pip
+            =============================DEBUG ASSISTANCE==========================
+
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/tmp/pip-build-g6dfc7cp/cryptography/setup.py", line 14, in <module>
+        from setuptools_rust import RustExtension
+    ModuleNotFoundError: No module named 'setuptools_rust'
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-g6dfc7cp/cryptography/
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 upgrade
+ERROR: unknown command "upgrade"
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3
+
+Usage:
+  pip <command> [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  check                       Verify installed packages have compatible dependencies.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion.
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output. Option is additive, and can be used up to 3 times (corresponding to WARNING, ERROR, and CRITICAL logging levels).
+  --log <path>                Path to a verbose appending log.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --retries <retries>         Maximum number of retries each connection should attempt (default 5 times).
+  --timeout <sec>             Set the socket timeout (default 15 seconds).
+  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup, (a)bort.
+  --trusted-host <hostname>   Mark this host as trusted, even though it does not have valid or any HTTPS.
+  --cert <path>               Path to alternate CA bundle.
+  --client-cert <path>        Path to SSL client certificate, a single file containing the private key and the certificate in PEM format.
+  --cache-dir <dir>           Store the cache data in <dir>.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine whether a new version of pip is available for download. Implied with --no-index.
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 -V
+pip 9.0.1 from /mnt/c/Users/lavan/work/docs/p3venv/lib/python3.6/site-packages (python 3.6)
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 install --upgrade
+You must give at least one requirement to install (see "pip help install")
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 install --upgrade pip3
+Collecting pip3
+  Could not find a version that satisfies the requirement pip3 (from versions: )
+No matching distribution found for pip3
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 install --upgrade pip
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/a4/6d/6463d49a933f547439d6b5b98b46af8742cc03ae83543e4d7688c2420f8b/pip-21.3.1-py3-none-any.whl (1.7MB)
+    100% |████████████████████████████████| 1.7MB 712kB/s
+Installing collected packages: pip
+  Found existing installation: pip 9.0.1
+    Uninstalling pip-9.0.1:
+      Successfully uninstalled pip-9.0.1
+Successfully installed pip-21.3.1
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# pip3 install giza
+Collecting giza
+  Using cached giza-0.5.18.tar.gz (121 kB)
+  Preparing metadata (setup.py) ... done
+Collecting argh
+  Using cached argh-0.26.2-py2.py3-none-any.whl (30 kB)
+Collecting docutils
+  Using cached docutils-0.18.1-py2.py3-none-any.whl (570 kB)
+Collecting fett
+  Using cached fett-0.3.2.tar.gz (7.2 kB)
+  Preparing metadata (setup.py) ... done
+Collecting hieroglyph
+  Using cached hieroglyph-2.1.0-py2.py3-none-any.whl (1.5 MB)
+Collecting jinja2
+  Using cached Jinja2-3.0.3-py3-none-any.whl (133 kB)
+Collecting jira
+  Using cached jira-3.1.1-py3-none-any.whl (67 kB)
+Collecting jsx-lexer
+  Using cached jsx_lexer-1.0.0-py2.py3-none-any.whl (3.9 kB)
+Collecting onetimepass
+  Using cached onetimepass-1.0.1.tar.gz (6.0 kB)
+  Preparing metadata (setup.py) ... done
+Collecting polib
+  Using cached polib-1.1.1-py2.py3-none-any.whl (20 kB)
+Collecting pyyaml
+  Using cached PyYAML-6.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (603 kB)
+Collecting rstcloth<0.3,>=0.2.5
+  Using cached rstcloth-0.2.6.tar.gz (10.0 kB)
+  Preparing metadata (setup.py) ... done
+Collecting sphinx
+  Using cached Sphinx-4.3.1-py3-none-any.whl (3.1 MB)
+Collecting sphinx-intl
+  Using cached sphinx-intl-2.0.1.tar.gz (17 kB)
+  Preparing metadata (setup.py) ... done
+Collecting sphinxcontrib-httpdomain
+  Using cached sphinxcontrib_httpdomain-1.8.0-py2.py3-none-any.whl (19 kB)
+Collecting wand
+  Using cached Wand-0.6.7-py2.py3-none-any.whl (139 kB)
+Requirement already satisfied: setuptools in ./p3venv/lib/python3.6/site-packages (from hieroglyph->giza) (39.0.1)
+Collecting alabaster<0.8,>=0.7
+  Using cached alabaster-0.7.12-py2.py3-none-any.whl (14 kB)
+Collecting docutils
+  Using cached docutils-0.17.1-py2.py3-none-any.whl (575 kB)
+Collecting sphinxcontrib-devhelp
+  Using cached sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl (84 kB)
+Collecting snowballstemmer>=1.1
+  Using cached snowballstemmer-2.2.0-py2.py3-none-any.whl (93 kB)
+Collecting sphinxcontrib-htmlhelp>=2.0.0
+  Using cached sphinxcontrib_htmlhelp-2.0.0-py2.py3-none-any.whl (100 kB)
+Collecting sphinxcontrib-serializinghtml>=1.1.5
+  Using cached sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl (94 kB)
+Collecting packaging
+  Using cached packaging-21.3-py3-none-any.whl (40 kB)
+Collecting Pygments>=2.0
+  Using cached Pygments-2.10.0-py3-none-any.whl (1.0 MB)
+Collecting babel>=1.3
+  Using cached Babel-2.9.1-py2.py3-none-any.whl (8.8 MB)
+Collecting imagesize
+  Using cached imagesize-1.3.0-py2.py3-none-any.whl (5.2 kB)
+Collecting sphinxcontrib-qthelp
+  Using cached sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl (90 kB)
+Collecting sphinxcontrib-jsmath
+  Using cached sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)
+Collecting sphinxcontrib-applehelp
+  Using cached sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl (121 kB)
+Collecting requests>=2.5.0
+  Using cached requests-2.26.0-py2.py3-none-any.whl (62 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.0.1-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (30 kB)
+Collecting keyring
+  Using cached keyring-23.4.0-py3-none-any.whl (33 kB)
+Collecting requests-toolbelt
+  Using cached requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
+Collecting requests-oauthlib>=1.1.0
+  Using cached requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Collecting defusedxml
+  Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Collecting six
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting click
+  Using cached click-8.0.3-py3-none-any.whl (97 kB)
+Collecting pytz>=2015.7
+  Using cached pytz-2021.3-py2.py3-none-any.whl (503 kB)
+Collecting certifi>=2017.4.17
+  Using cached certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+Collecting charset-normalizer~=2.0.0
+  Using cached charset_normalizer-2.0.9-py3-none-any.whl (39 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Using cached urllib3-1.26.7-py2.py3-none-any.whl (138 kB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.3-py3-none-any.whl (61 kB)
+Collecting oauthlib>=3.0.0
+  Using cached oauthlib-3.1.1-py2.py3-none-any.whl (146 kB)
+Collecting importlib-metadata
+  Using cached importlib_metadata-4.8.2-py3-none-any.whl (17 kB)
+Collecting SecretStorage>=3.2
+  Using cached SecretStorage-3.3.1-py3-none-any.whl (15 kB)
+Collecting jeepney>=0.4.2
+  Using cached jeepney-0.7.1-py3-none-any.whl (54 kB)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Using cached pyparsing-3.0.6-py3-none-any.whl (97 kB)
+Collecting zipp>=0.5
+  Using cached zipp-3.6.0-py3-none-any.whl (5.3 kB)
+Collecting typing-extensions>=3.6.4
+  Using cached typing_extensions-4.0.1-py3-none-any.whl (22 kB)
+Collecting cryptography>=2.0
+  Downloading cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl (3.6 MB)
+     |████████████████████████████████| 3.6 MB 3.1 MB/s
+Collecting cffi>=1.12
+  Downloading cffi-1.15.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (405 kB)
+     |████████████████████████████████| 405 kB 11.0 MB/s
+Collecting pycparser
+  Downloading pycparser-2.21-py2.py3-none-any.whl (118 kB)
+     |████████████████████████████████| 118 kB 13.1 MB/s
+Using legacy 'setup.py install' for giza, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for rstcloth, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for fett, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for onetimepass, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for sphinx-intl, since package 'wheel' is not installed.
+Installing collected packages: pycparser, cffi, zipp, urllib3, typing-extensions, pytz, pyparsing, MarkupSafe, jeepney, idna, cryptography, charset-normalizer, certifi, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, snowballstemmer, SecretStorage, requests, Pygments, packaging, oauthlib, jinja2, importlib-metadata, imagesize, docutils, babel, alabaster, sphinx, six, requests-toolbelt, requests-oauthlib, keyring, defusedxml, click, wand, sphinxcontrib-httpdomain, sphinx-intl, rstcloth, pyyaml, polib, onetimepass, jsx-lexer, jira, hieroglyph, fett, argh, giza
+    Running setup.py install for sphinx-intl ... done
+    Running setup.py install for rstcloth ... done
+    Running setup.py install for onetimepass ... done
+    Running setup.py install for fett ... done
+    Running setup.py install for giza ... done
+Successfully installed MarkupSafe-2.0.1 Pygments-2.10.0 SecretStorage-3.3.1 alabaster-0.7.12 argh-0.26.2 babel-2.9.1 certifi-2021.10.8 cffi-1.15.0 charset-normalizer-2.0.9 click-8.0.3 cryptography-36.0.0 defusedxml-0.7.1 docutils-0.17.1 fett-0.3.2 giza-0.5.18 hieroglyph-2.1.0 idna-3.3 imagesize-1.3.0 importlib-metadata-4.8.2 jeepney-0.7.1 jinja2-3.0.3 jira-3.1.1 jsx-lexer-1.0.0 keyring-23.4.0 oauthlib-3.1.1 onetimepass-1.0.1 packaging-21.3 polib-1.1.1 pycparser-2.21 pyparsing-3.0.6 pytz-2021.3 pyyaml-6.0 requests-2.26.0 requests-oauthlib-1.3.0 requests-toolbelt-0.9.1 rstcloth-0.2.6 six-1.16.0 snowballstemmer-2.2.0 sphinx-4.3.1 sphinx-intl-2.0.1 sphinxcontrib-applehelp-1.0.2 sphinxcontrib-devhelp-1.0.2 sphinxcontrib-htmlhelp-2.0.0 sphinxcontrib-httpdomain-1.8.0 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-1.0.3 sphinxcontrib-serializinghtml-1.1.5 typing-extensions-4.0.1 urllib3-1.26.7 wand-0.6.7 zipp-3.6.0
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git remote add docs https://github.com/LakshmiLavanyaKasturi/docs.git
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git remote add my-docs https://github.com/LakshmiLavanyaKasturi/docs.git
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git fetch my-docs
+From https://github.com/LakshmiLavanyaKasturi/docs
+ * [new branch]          master                                                                           -> my-docs/master
+ * [new branch]          master-backup                                                                    -> my-docs/master-backup
+ * [new branch]          master-next-gen-prep                                                             -> my-docs/master-next-gen-prep
+ * [new branch]          revert-5825-DOCS-14472-update-operators-act-in-lexicographic-order-v4.2-backport -> my-docs/revert-5825-DOCS-14472-update-operators-act-in-lexicographic-order-v4.2-backport
+ * [new branch]          revert-5913-DOCS-14826-readWrite-role-has-changeStream-privilege                 -> my-docs/revert-5913-DOCS-14826-readWrite-role-has-changeStream-privilege
+ * [new branch]          revert-5923-DOCSP-14047-faq-fundamentals-add-context-4.4                         -> my-docs/revert-5923-DOCSP-14047-faq-fundamentals-add-context-4.4
+ * [new branch]          v2.2                                                                             -> my-docs/v2.2
+ * [new branch]          v2.4                                                                             -> my-docs/v2.4
+ * [new branch]          v2.6                                                                             -> my-docs/v2.6
+ * [new branch]          v3.0                                                                             -> my-docs/v3.0
+ * [new branch]          v3.2                                                                             -> my-docs/v3.2
+ * [new branch]          v3.4                                                                             -> my-docs/v3.4
+ * [new branch]          v3.6                                                                             -> my-docs/v3.6
+ * [new branch]          v3.6.24                                                                          -> my-docs/v3.6.24
+ * [new branch]          v4.0                                                                             -> my-docs/v4.0
+ * [new branch]          v4.0.27                                                                          -> my-docs/v4.0.27
+ * [new branch]          v4.2                                                                             -> my-docs/v4.2
+ * [new branch]          v4.2.16                                                                          -> my-docs/v4.2.16
+ * [new branch]          v4.4                                                                             -> my-docs/v4.4
+ * [new branch]          v4.4.9                                                                           -> my-docs/v4.4.9
+ * [new branch]          v5.0                                                                             -> my-docs/v5.0
+ * [new branch]          v5.1                                                                             -> my-docs/v5.1
+ * [new branch]          v5.2                                                                             -> my-docs/v5.2
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   source/reference/database-references.txt
+        modified:   source/reference/operator/aggregation/lookup.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        p3venv/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git checkout -b DOCS-14980
+M       source/reference/database-references.txt
+M       source/reference/operator/aggregation/lookup.txt
+Switched to a new branch 'DOCS-14980'
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git add -all
+error: did you mean `--all` (with two dashes ?)
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git add -a
+error: unknown switch `a'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --chmod <(+/-)x>      override the executable bit of the listed files
+
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git add -A
+^C
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git status
+On branch DOCS-14980
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   source/reference/database-references.txt
+        modified:   source/reference/operator/aggregation/lookup.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        p3venv/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git add source
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git status
+On branch DOCS-14980
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   source/reference/database-references.txt
+        modified:   source/reference/operator/aggregation/lookup.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        p3venv/
+
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git commit -m "DOCS-14980 updated lookup documentation"
+[DOCS-14980 33c926e93] DOCS-14980 updated lookup documentation
+ Committer: root <root@DESKTOP-FG0H9LL.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git push my-docs
+Username for 'https://github.com': lavanyakasturi@gmail.com
+Password for 'https://lavanyakasturi@gmail@github.com':
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/LakshmiLavanyaKasturi/docs.git/'
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# ssh
+ssh               ssh-add.exe       ssh-agent.exe     ssh-copy-id       ssh-import-id-gh  ssh-keygen        ssh-keyscan       ssh.exe
+ssh-add           ssh-agent         ssh-argv0         ssh-import-id     ssh-import-id-lp  ssh-keygen.exe    ssh-keyscan.exe   sshd
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:tChmKdKrYH2nrYcUQr5iFeXyfkS5SbpAx3jUgBjSgyM root@DESKTOP-FG0H9LL
+The key's randomart image is:
++---[RSA 2048]----+
+|.+o o+o          |
+|E.o+=  ..        |
+|..o=.= +.        |
+| ..+=o+oo.       |
+|. +.Boo+S        |
+| +.*ooo          |
+|o.o..+.o         |
+|o.  ..=.         |
+|.    oo.         |
++----[SHA256]-----+
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJG5qLQsAl1Wo+Eb/TN3Y0FKZ8kbm7LdiOpmxYSMjZ+MrcXefX2Od/Gb2JMnlqA30FyLfNwggNyek9+ahRsNspybIVghUANNlUDdzo4kB1jB2Atk89wyIlFk5B0B9O7gUSkjj/pwv1vk/9rE7KDsMAvuzkH4btBqLxF5ChWX1nYONObrPH7jw8ajKcdH7y9MWQkZ4Nfaw8FNrVLJqCQAnYeshpHaH4jPdGQQDwX1ZSCBH8kzHsUzvhxGlq+/V+hL3rrLMNFYGwh3iu9Qj1EcgzUaeF+YyEkXZHkAlA7ZJpQI0b9sYWBNEGdQk77Qw0ZMuduugPpnCiJY833BftIb1n root@DESKTOP-FG0H9LL
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git remote add my-fork git@github.com:LakshmiLavanyaKasturi/docs.git
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs# git push my-fork
+The authenticity of host 'github.com (140.82.112.3)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.112.3' (ECDSA) to the list of known hosts.
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 666 bytes | 222.00 KiB/s, done.
+Total 8 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+remote:
+remote: Create a pull request for 'DOCS-14980' on GitHub by visiting:
+remote:      https://github.com/LakshmiLavanyaKasturi/docs/pull/new/DOCS-14980
+remote:
+To github.com:LakshmiLavanyaKasturi/docs.git
+ * [new branch]          DOCS-14980 -> DOCS-14980
+(p3venv) root@DESKTOP-FG0H9LL:/mnt/c/Users/lavan/work/docs#
