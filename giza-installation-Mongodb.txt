@@ -1,6 +1,6 @@
 root@DESKTOP-FG0H9LL:~# python
 
-Command 'python' not found, but can be installed with:
+The following command 'python' not found, but can be installed with:
 
 apt install python3
 apt install python
